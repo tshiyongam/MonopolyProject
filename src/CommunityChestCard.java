@@ -9,7 +9,8 @@ public class CommunityChestCard implements Card {
     private final ArrayList<String> communityChestCards = new ArrayList<>();
 
     @Override
-    public String getCard() {Random rand = new Random();
+    public String getCard() {
+        Random rand = new Random();
         if (communityChestCards.isEmpty()) {
             try {
                 Scanner scanner = new Scanner(new File("texts/communityChest.txt"));
