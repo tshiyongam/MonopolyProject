@@ -19,7 +19,8 @@ public class ChanceCard implements Card {
                 scanner.close();
 
                 if (chanceCards.isEmpty()) return "No cards available";
-            } catch (FileNotFoundException e) {
+            }
+            catch (FileNotFoundException e) {
                 return "File not found";
             }
         }
@@ -31,9 +32,9 @@ public class ChanceCard implements Card {
         int randomIndex = rand.nextInt(chanceCards.size());
         String drawnCard = chanceCards.get(randomIndex);
 
-        if (drawnCard.equals("Get Out of Jail Free")) {
+        if (drawnCard.equals("Get Out of Jail Free."))
             chanceCards.remove(randomIndex);
-        }
+
         return drawnCard;
     }
 }

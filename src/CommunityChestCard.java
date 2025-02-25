@@ -19,7 +19,8 @@ public class CommunityChestCard implements Card {
                 scanner.close();
 
                 if (communityChestCards.isEmpty()) return "No cards available";  // Handle empty file case
-            } catch (FileNotFoundException e) {
+            }
+            catch (FileNotFoundException e) {
                 return "File not found";
             }
         }
@@ -31,9 +32,9 @@ public class CommunityChestCard implements Card {
         int randomIndex = rand.nextInt(communityChestCards.size());
         String drawnCard = communityChestCards.get(randomIndex);
 
-        if (drawnCard.equals("Get Out of Jail Free.")) {
+        if (drawnCard.equals("Get Out of Jail Free."))
             communityChestCards.remove(randomIndex);
-        }
+
         return drawnCard;
     }
 }
