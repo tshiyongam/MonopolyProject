@@ -37,4 +37,10 @@ public class CommunityChestCard implements Card {
 
         return drawnCard;
     }
+
+    @Override
+    public ArrayList<String> getAllCards() {
+        return communityChestCards;
+    }
+
 }

@@ -37,4 +37,9 @@ public class ChanceCard implements Card {
 
         return drawnCard;
     }
+
+    @Override
+    public ArrayList<String> getAllCards() {
+        return chanceCards;
+    }
 }
