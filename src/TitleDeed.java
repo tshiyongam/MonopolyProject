@@ -17,6 +17,10 @@ public class TitleDeed {
     private int houseCount = 0;
     private boolean hasHotel = false;
 
+    /**
+     * Constructor for the TitleDeed class.
+     * Author: Mael Tshiyonga
+     */
     public TitleDeed() {
         try {
             Scanner scanner = new Scanner(new File("texts/titleDeeds.txt"));
@@ -27,6 +31,11 @@ public class TitleDeed {
         }
     }
 
+    /**
+     * Method to get the TitleDeed object.
+     * @param propertyName String representing the name of the property
+     * @return TitleDeed object
+     */
     public int getRent(TitleDeed propertyName) {
         if (hasHotel) return hotelRent;
         else if (houseCount > 0 && houseCount < 5) return rentWithHouses[houseCount - 1];
@@ -35,10 +44,18 @@ public class TitleDeed {
 
     //TODO: In addition to adding the house count, the cost of adding each house/hotel should be
     // deducted from the player's balance
+    /**
+     * Method to add a house to the property.
+     * Author: Mael Tshiyonga
+     */
     public void addHouse() {
         if (houseCount < 4 && !hasHotel) houseCount++;
     }
 
+    /**
+     * Method to add a hotel to the property.
+     * Author: Mael Tshiyonga
+     */
     public void addHotel() {
         if (houseCount == 4 && !hasHotel) {
             houseCount = 0;
@@ -46,10 +63,18 @@ public class TitleDeed {
         }
     }
 
+    /**
+     * Method to remove a house from the property.
+     * Author: Mael Tshiyonga
+     */
     public void removeHouse() {
         if (houseCount > 0 && !hasHotel) houseCount--;
     }
 
+    /**
+     * Method to remove a hotel from the property.
+     * Author: Mael Tshiyonga
+     */
     public void removeHotel() {
         if (hasHotel) {
             hasHotel = false;
@@ -57,35 +82,75 @@ public class TitleDeed {
         }
     }
 
+    /**
+     * Method to get the name of the property.
+     * @return String representing the name of the property
+     * Author: Mael Tshiyonga
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Method to get the color of the property.
+     * @return String representing the color of the property
+     * Author: Mael Tshiyonga
+     */
     public String getColor() {
         return color;
     }
 
+    /**
+     * Method to get the number of houses on the property.
+     * @return int representing the number of houses on the property
+     * Author: Mael Tshiyonga
+     */
     public int getHouseCount() {
         return houseCount;
     }
 
+    /**
+     * Method to check if the property has a hotel.
+     * @return boolean representing if the property has a hotel
+     * Author: Mael Tshiyonga
+     */
     public boolean hasHotel() {
         return hasHotel;
     }
 
+    /**
+     * Method to get the mortgage value of the property.
+     * @return int representing the mortgage value of the property
+     * Author: Mael Tshiyonga
+     */
     public int getMortgageValue() {
         return mortgageValue;
     }
 
+    /**
+     * Method to get the cost of adding a house to the property.
+     * @return int representing the cost of adding a house to the property
+     * Author: Mael Tshiyonga
+     */
     public int getHouseCost() {
         return houseCost;
     }
 
+    /**
+     * Method to get the cost of adding a hotel to the property.
+     * @return int representing the cost of adding a hotel to the property
+     * Author: Mael Tshiyonga
+     */
     public int getHotelCost() {
         return hotelCost;
     }
 
 
+    /**
+     * Method to load the Title Deeds from a text file.
+     * @param scanner Scanner object
+     * Author: Mael Tshiyonga
+     */
     private void loadTitleDeeds(Scanner scanner) {
         while (scanner.hasNextLine()) {
             String[] titleDeed = scanner.nextLine().split(",");
@@ -98,6 +163,7 @@ public class TitleDeed {
             mortgageValue = Integer.parseInt(titleDeed[8]);
             houseCost = Integer.parseInt(titleDeed[9]);
             hotelCost = Integer.parseInt(titleDeed[10]);
+            deeds.put(name, this);
         }
     }
 }

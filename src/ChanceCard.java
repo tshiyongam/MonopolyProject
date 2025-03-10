@@ -9,12 +9,20 @@ public class ChanceCard implements Card {
     private final ArrayList<String> chanceCards;
     private final Random rand;
 
+    /**
+     * Constructor for the ChanceCard class.
+     * Author: Mael Tshiyonga
+     */
     public ChanceCard() {
         chanceCards = new ArrayList<>();
         rand = new Random();
         loadCards();
     }
 
+    /**
+     * Method to draw a card from the Chance deck.
+     * Author: Mael Tshiyonga
+     */
     @Override
     public String drawCard() {
         if (chanceCards.isEmpty())
@@ -23,6 +31,13 @@ public class ChanceCard implements Card {
         return shuffledCard(rand, chanceCards);
     }
 
+    /**
+     * Method to shuffle the Chance deck.
+     * @param rand Random object
+     * @param chanceCards ArrayList of Chance cards
+     * @return String representing the drawn card
+     * Author: Mael Tshiyonga
+     */
     @Override
     public String shuffledCard(Random rand, ArrayList<String> chanceCards) {
         int randomIndex = rand.nextInt(chanceCards.size());
@@ -34,6 +49,9 @@ public class ChanceCard implements Card {
         return drawnCard;
     }
 
+    /**
+     * Method to load the contents of the Chance cards from a text file.
+     */
     private void loadCards() {
         try {
             Scanner scanner = new Scanner(new File("texts/chance.txt"));
@@ -46,6 +64,10 @@ public class ChanceCard implements Card {
         }
     }
 
+    /**
+     * Method to reset the Chance deck.
+     * Author: Mael Tshiyonga
+     */
     @Override
     public void resetDeck() {
         chanceCards.clear();
