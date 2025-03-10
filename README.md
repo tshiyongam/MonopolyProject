@@ -1,6 +1,6 @@
 ## Monopoly Project
 Repository for the Monopoly project for Intro to Software Engineering (CSCI 234) at Moravian University
-Authors: Connor Moyer, Aidan Casey, Vicente Rivera, Mael Tshiyonga
+<br><br>Authors: Connor Moyer, Aidan Casey, Vicente Rivera, Mael Tshiyonga
 
 ## Project Description
 
