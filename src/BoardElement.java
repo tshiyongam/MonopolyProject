@@ -35,5 +35,5 @@ public abstract class BoardElement {
     }
 
     //Abstract method to be implemented by subclasses for handling specific actions
-    public abstract void triggerAction();
+    public abstract void triggerAction(Player player);
 }

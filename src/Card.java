@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.ArrayList;
 
 public interface Card {
-    String getCard();
-    String shuffledCard(Random random, ArrayList<String> cards);
-    ArrayList<String> getAllCards();
+    String drawCard();
+    void resetDeck();
+    String shuffledCard(Random rand, ArrayList<String> cards);
 }

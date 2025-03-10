@@ -6,24 +6,20 @@ import java.util.Random;
 
 public class ChanceCard implements Card {
 
-    private static final ArrayList<String> chanceCards = new ArrayList<>();
+    private final ArrayList<String> chanceCards;
+    private final Random rand;
+
+    public ChanceCard() {
+        chanceCards = new ArrayList<>();
+        rand = new Random();
+        loadCards();
+    }
 
     @Override
-    public String getCard() {
-        Random rand = new Random();
-        if (chanceCards.isEmpty()) {
-            try {
-                Scanner scanner = new Scanner(new File("texts/chance.txt"));
-                while (scanner.hasNextLine())
-                    chanceCards.add(scanner.nextLine());
-                scanner.close();
+    public String drawCard() {
+        if (chanceCards.isEmpty())
+            loadCards();
 
-                if (chanceCards.isEmpty()) return "No cards available";
-            }
-            catch (FileNotFoundException e) {
-                return "File not found";
-            }
-        }
         return shuffledCard(rand, chanceCards);
     }
 
@@ -38,8 +34,21 @@ public class ChanceCard implements Card {
         return drawnCard;
     }
 
+    private void loadCards() {
+        try {
+            Scanner scanner = new Scanner(new File("texts/chance.txt"));
+            while (scanner.hasNextLine())
+                chanceCards.add(scanner.nextLine());
+            scanner.close();
+        }
+        catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     @Override
-    public ArrayList<String> getAllCards() {
-        return chanceCards;
+    public void resetDeck() {
+        chanceCards.clear();
+        loadCards();
     }
 }

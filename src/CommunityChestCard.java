@@ -6,24 +6,20 @@ import java.util.Scanner;
 
 public class CommunityChestCard implements Card {
 
-    private final ArrayList<String> communityChestCards = new ArrayList<>();
+    private final ArrayList<String> communityChestCards;
+    private final Random rand;
+
+    public CommunityChestCard() {
+        communityChestCards = new ArrayList<>();
+        rand = new Random();
+        loadCards();
+    }
 
     @Override
-    public String getCard() {
-        Random rand = new Random();
-        if (communityChestCards.isEmpty()) {
-            try {
-                Scanner scanner = new Scanner(new File("texts/communityChest.txt"));
-                while (scanner.hasNextLine())
-                    communityChestCards.add(scanner.nextLine());
-                scanner.close();
+    public String drawCard() {
+        if (communityChestCards.isEmpty())
+            loadCards();
 
-                if (communityChestCards.isEmpty()) return "No cards available";  // Handle empty file case
-            }
-            catch (FileNotFoundException e) {
-                return "File not found";
-            }
-        }
         return shuffledCard(rand, communityChestCards);
     }
 
@@ -38,9 +34,21 @@ public class CommunityChestCard implements Card {
         return drawnCard;
     }
 
-    @Override
-    public ArrayList<String> getAllCards() {
-        return communityChestCards;
+    private void loadCards() {
+        try {
+            Scanner scanner = new Scanner(new File("texts/chance.txt"));
+            while (scanner.hasNextLine())
+                communityChestCards.add(scanner.nextLine());
+            scanner.close();
+        }
+        catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
+    @Override
+    public void resetDeck() {
+        communityChestCards.clear();
+        loadCards();
+    }
 }
