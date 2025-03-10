@@ -4,27 +4,34 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-public class CommunityChestCard implements Card {
+public class CommunityChestCard extends BoardElement implements Card {
 
-    private final ArrayList<String> communityChestCards = new ArrayList<>();
+    private final ArrayList<String> communityChestCards;
+    private final Random rand;
+
+    public CommunityChestCard(String name) {
+        super(name, SpaceType.COMMUNITY_CHEST);
+        communityChestCards = new ArrayList<>();
+        rand = new Random();
+        loadCards();
+    }
 
     @Override
-    public String getCard() {
-        Random rand = new Random();
-        if (communityChestCards.isEmpty()) {
-            try {
-                Scanner scanner = new Scanner(new File("texts/communityChest.txt"));
-                while (scanner.hasNextLine())
-                    communityChestCards.add(scanner.nextLine());
-                scanner.close();
-
-                if (communityChestCards.isEmpty()) return "No cards available";  // Handle empty file case
-            }
-            catch (FileNotFoundException e) {
-                return "File not found";
-            }
-        }
+    public String drawCard(){
+        if(communityChestCards.isEmpty())
+            loadCards();
         return shuffledCard(rand, communityChestCards);
+    }
+
+    private void loadCards(){
+        try {
+            Scanner scanner = new Scanner(new File("texts/chance.txt"));
+            while (scanner.hasNextLine())
+                communityChestCards.add(scanner.nextLine());
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -39,8 +46,13 @@ public class CommunityChestCard implements Card {
     }
 
     @Override
-    public ArrayList<String> getAllCards() {
-        return communityChestCards;
+    public void resetDeck(){
+        communityChestCards.clear();
+        loadCards();
     }
 
+    @Override
+    public void triggerAction(Player player) {
+
+    }
 }

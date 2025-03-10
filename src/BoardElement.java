@@ -1,13 +1,39 @@
 import java.util.ArrayList;
-import java.util.Random;
+import java.util.List;
 
-public interface BoardElement {
-    String getCard();
+//Abstract class that represents a general space on the game board.
+public abstract class BoardElement {
 
-    String getName();
-    Integer getPrice();
+    private final String name;
+    private final SpaceType type;
+    private List<Token> tokens;
 
-    String shuffledCard(Random rand, ArrayList<String> communityChestCards);
+    public BoardElement(String name, SpaceType type) {
+        this.name = name;
+        this.type = type;
+        this.tokens = new ArrayList<Token>();
+    }
 
-    ArrayList<String> getAllCards();
+    public String getName() {
+        return name;
+    }
+
+    public SpaceType getType() {
+        return type;
+    }
+
+    public List<Token> getTokens() {
+        return tokens;
+    }
+
+    public void addToken(Token token) {
+        tokens.add(token);
+    }
+
+    public void removeToken(Token token) {
+        tokens.remove(token);
+    }
+
+    //Abstract method to be implemented by subclasses for handling specific actions
+    public abstract void triggerAction(Player player);
 }

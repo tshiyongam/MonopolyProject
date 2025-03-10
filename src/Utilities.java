@@ -1,25 +1,14 @@
-import java.util.ArrayList;
-import java.util.Random;
-
-
-public class IncomeTax extends BoardElement{
+//Board Space implementation for Properties
+public class Utilities extends BoardElement {
     private final int price;
-    private final int rent;
     private Player owner;
 
-    public IncomeTax(String name, int price, int rent) {
+    public Utilities(String name, int price) {
         super(name, SpaceType.INCOME_TAX);
         this.price = price;
-        this.rent = rent;
         this.owner = null;
 
     }
-
-
-    public int getRent() {
-        return rent;
-    }
-
 
     public Player getOwner() {
         return owner;
@@ -29,7 +18,8 @@ public class IncomeTax extends BoardElement{
     public Integer getPrice() {
         return price;
     }
-    public void setOwner(Player player){
+
+    public void setOwner(Player player) {
         owner = player;
     }
 
@@ -37,9 +27,4 @@ public class IncomeTax extends BoardElement{
     public void triggerAction(Player player) {
 
     }
-
-
-
-
-
 }

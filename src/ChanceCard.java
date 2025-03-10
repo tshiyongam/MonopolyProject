@@ -1,30 +1,30 @@
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.io.File;
-import java.util.Scanner;
 import java.util.Random;
+import java.util.Scanner;
 
-public class ChanceCard implements Card {
+public class ChanceCard extends BoardElement implements Card {
 
-    private static final ArrayList<String> chanceCards = new ArrayList<>();
+    private final ArrayList<String> chanceCards;
+    private final Random rand;
 
-    @Override
-    public String getCard() {
-        Random rand = new Random();
-        if (chanceCards.isEmpty()) {
-            try {
-                Scanner scanner = new Scanner(new File("texts/chance.txt"));
-                while (scanner.hasNextLine())
-                    chanceCards.add(scanner.nextLine());
-                scanner.close();
+    public ChanceCard(String name) {
+        super(name, SpaceType.CHANCE);
+        chanceCards = new ArrayList<>();
+        rand = new Random();
+        loadCards();
+    }
 
-                if (chanceCards.isEmpty()) return "No cards available";
-            }
-            catch (FileNotFoundException e) {
-                return "File not found";
-            }
+    private void loadCards(){
+        try {
+            Scanner scanner = new Scanner(new File("texts/chance.txt"));
+            while (scanner.hasNextLine())
+                chanceCards.add(scanner.nextLine());
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
         }
-        return shuffledCard(rand, chanceCards);
     }
 
     @Override
@@ -39,7 +39,20 @@ public class ChanceCard implements Card {
     }
 
     @Override
-    public ArrayList<String> getAllCards() {
-        return chanceCards;
+    public String drawCard() {
+        if(chanceCards.isEmpty())
+            loadCards();
+        return shuffledCard(rand, chanceCards);
+    }
+
+    @Override
+    public void resetDeck(){
+        chanceCards.clear();
+        loadCards();
+    }
+
+    @Override
+    public void triggerAction(Player player) {
+
     }
 }
