@@ -4,17 +4,17 @@ import java.io.File;
 import java.util.Scanner;
 import java.util.Random;
 
-public class Chance extends BoardElement implements Card {
+public class ChanceCard extends BoardElement implements Card {
 
     private final ArrayList<String> chanceCards;
     private final Random rand;
 
     /**
-     * Constructor for the Chance class.
+     * Constructor for the ChanceCard class.
      *
      * @author Mael Tshiyonga
      */
-    public Chance(String name) {
+    public ChanceCard(String name) {
         super(name, SpaceType.CHANCE);
         chanceCards = new ArrayList<>();
         rand = new Random();
@@ -22,7 +22,7 @@ public class Chance extends BoardElement implements Card {
     }
 
     /**
-     * Method to draw a card from the Chance deck.
+     * Method to draw a card from the ChanceCard deck.
      *
      * @author Mael Tshiyonga
      */
@@ -34,7 +34,7 @@ public class Chance extends BoardElement implements Card {
     }
 
     /**
-     * Method to load the contents of the Chance cards from a text file.
+     * Method to load the contents of the ChanceCard cards from a text file.
      *
      * @author Mael Tshiyonga
      */
@@ -50,10 +50,10 @@ public class Chance extends BoardElement implements Card {
     }
 
     /**
-     * Method to shuffle the Chance deck.
+     * Method to shuffle the ChanceCard deck.
      *
      * @param rand        Random object
-     * @param chanceCards ArrayList of Chance cards
+     * @param chanceCards ArrayList of ChanceCard cards
      * @return String representing the drawn card
      * @author Mael Tshiyonga
      */
@@ -69,7 +69,7 @@ public class Chance extends BoardElement implements Card {
     }
 
     /**
-     * Method to reset the Chance deck.
+     * Method to reset the ChanceCard deck.
      *
      * @author Mael Tshiyonga
      */

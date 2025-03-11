@@ -1,4 +1,4 @@
-public class Property extends BoardElement{
+public class PropertyElement extends BoardElement{
     private final int price;
     private final int rent;
     private Player owner;
@@ -10,7 +10,7 @@ public class Property extends BoardElement{
      * @param rent Rent of the property
      * @author Mael Tshiyonga
      */
-    public Property(String name, int price, int rent) {
+    public PropertyElement(String name, int price, int rent) {
         super(name, SpaceType.PROPERTY);
         this.price = price;
         this.rent = rent;

@@ -11,7 +11,7 @@ public abstract class BoardElement {
     /**
      * Creates a BoardElement with a given name and space type.
      * @param name The name of the space on the game board.
-     * @param type The type of space (GO, Property, Jail, etc.).
+     * @param type The type of space (GO, PropertyElement, Jail, etc.).
      * @author Connor Moyer
      */
     public BoardElement(String name, SpaceType type) {

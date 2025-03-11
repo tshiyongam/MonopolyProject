@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-public class CommunityChest extends BoardElement implements Card {
+public class CommunityChestCard extends BoardElement implements Card {
 
     private final ArrayList<String> communityChestCards;
     private final Random rand;
 
     /**
-     * Constructor for the CommunityChest class.
+     * Constructor for the CommunityChestCard class.
      * @author Mael Tshiyonga
      */
-    public CommunityChest(String name) {
+    public CommunityChestCard(String name) {
         super(name, SpaceType.COMMUNITY_CHEST);
         communityChestCards = new ArrayList<>();
         rand = new Random();
