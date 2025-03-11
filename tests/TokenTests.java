@@ -43,7 +43,7 @@ public class TokenTests {
         Token token3 = new Token(TokenType.BATTLESHIP);
         Player player3 = new Player("Mael", TokenType.BATTLESHIP);
         token3.setPlayer(player3);
-        assertFalse(player.equals(token3.getPlayer()));
+        assertNotEquals(player, token3.getPlayer());
     }
 
     /**

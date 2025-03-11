@@ -10,8 +10,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
         @BeforeEach
         public void setUp() {
-            player1 = new Player("Player1");
-            player2 = new Player("Player2");
+            player1 = new Player("Player1", TokenType.CAR);
+            player2 = new Player("Player2", TokenType.HAT);
             gameState = new GameState();
             gameState.GameStart(Arrays.asList(player1, player2));
         }
