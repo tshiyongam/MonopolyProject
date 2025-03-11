@@ -11,7 +11,6 @@ public class ChanceCard extends BoardElement implements Card {
 
     /**
      * Constructor for the ChanceCard class.
-     *
      * @author Mael Tshiyonga
      */
     public ChanceCard(String name) {
@@ -23,7 +22,6 @@ public class ChanceCard extends BoardElement implements Card {
 
     /**
      * Method to draw a card from the ChanceCard deck.
-     *
      * @author Mael Tshiyonga
      */
     @Override
@@ -35,7 +33,6 @@ public class ChanceCard extends BoardElement implements Card {
 
     /**
      * Method to load the contents of the ChanceCard cards from a text file.
-     *
      * @author Mael Tshiyonga
      */
     private void loadCards() {
@@ -51,8 +48,7 @@ public class ChanceCard extends BoardElement implements Card {
 
     /**
      * Method to shuffle the ChanceCard deck.
-     *
-     * @param rand        Random object
+     * @param rand Random object
      * @param chanceCards ArrayList of ChanceCard cards
      * @return String representing the drawn card
      * @author Mael Tshiyonga
@@ -70,7 +66,6 @@ public class ChanceCard extends BoardElement implements Card {
 
     /**
      * Method to reset the ChanceCard deck.
-     *
      * @author Mael Tshiyonga
      */
     @Override
@@ -79,6 +74,11 @@ public class ChanceCard extends BoardElement implements Card {
         loadCards();
     }
 
+    /**
+     * Method to trigger the action of the ChanceCard.
+     * @param player Player object
+     * @author Mael Tshiyonga
+     */
     @Override
     public void triggerAction(Player player) {
         // TODO Auto-generated method stub
