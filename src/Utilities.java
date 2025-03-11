@@ -9,7 +9,6 @@ public class Utilities extends BoardElement {
      * @param price price of the Utility
      * @author Aidan Casey
      */
-
     public Utilities(String name, int price) {
         super(name, SpaceType.INCOME_TAX);
         this.price = price;

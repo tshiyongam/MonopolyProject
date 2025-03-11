@@ -3,28 +3,16 @@
  * @author Connor Moyer
  */
 public class Token {
-    private final String name;
     private final TokenType type;
     private Player player;
 
     /**
-     * Creates a Token with a given name and type.
-     * @param name The name of the token.
+     * Creates a token with a given type.
      * @param type The type of the token.
      * @author Connor Moyer
      */
-    public Token(String name, TokenType type) {
-        this.name = name;
+    public Token(TokenType type) {
         this.type = type;
-    }
-
-    /**
-     * Gets the name of the token.
-     * @return The name of the token.
-     * @author Connor Moyer
-     */
-    public String getName() {
-        return name;
     }
 
     /**

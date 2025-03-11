@@ -4,7 +4,7 @@ public class Player {
     private int position = 0;
     private int money = 1500;
     private  boolean inJail = false;
-    private Token token;
+    private Token token; ;
     //Todo: Set players token when token class is made
 
     /**
@@ -12,10 +12,9 @@ public class Player {
      * @param name Name of the player
      * @author Vicente Rivera
      */
-    public Player(String name){ //Todo: Add token as an input value when token class is made
+    public Player(String name, TokenType token) {
         this.name = name;
-        //Todo: Add player token when token class is made
-        //this.token = token;
+        this.token = new Token(token);
     }
 
     /**

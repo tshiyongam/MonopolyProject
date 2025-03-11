@@ -1,5 +1,5 @@
 //Board Space implementation for Properties
-public class RailroadElement extends BoardElement{
+public class RailroadElement extends BoardElement {
     private final int price;
     private Player owner;
     /**

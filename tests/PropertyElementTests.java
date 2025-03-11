@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+// Tests for the PropertyElement class
 public class PropertyElementTests {
 
     /**
@@ -58,7 +59,7 @@ public class PropertyElementTests {
     @Test
     public void testSetOwner() {
         PropertyElement propertyElement = new PropertyElement("Moravian University", 50, 20);
-        Player player = new Player("Mael");
+        Player player = new Player("Mael", TokenType.CAR);
         propertyElement.setOwner(player);
         assertEquals(player, propertyElement.getOwner());
     }
@@ -70,7 +71,7 @@ public class PropertyElementTests {
     @Test
     public void testTriggerAction() {
         PropertyElement propertyElement = new PropertyElement("Moravian University", 50, 20);
-        Player player = new Player("Mael");
+        Player player = new Player("Mael", TokenType.BATTLESHIP);
         propertyElement.triggerAction(player);
     }
 
