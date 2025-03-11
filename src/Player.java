@@ -4,27 +4,51 @@ public class Player {
     private int position = 0;
     private int money = 1500;
     private  boolean inJail = false;
+    private Token token;
     //Todo: Set players token when token class is made
-    // private Token token
 
+    /**
+     * Constructor for a Player object
+     * @param name Name of the player
+     * @author Vicente Rivera
+     */
     public Player(String name){ //Todo: Add token as an input value when token class is made
         this.name = name;
         //Todo: Add player token when token class is made
         //this.token = token;
     }
 
+    /**
+     * Method for getting a players name
+     * @return A string value representing the name of the player
+     * @author Vicente Rivera
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Method for getting the position of a player
+     * @return An integer value representing the position of the player on the board
+     * @author Vicente Rivera
+     */
     public int getPosition() {
         return position;
     }
 
+    /**
+     * Method for determining whether a play is in jail or not
+     * @return A boolean value representing if the player is in jail
+     * @author Vicente Rivera
+     */
     public boolean isInJail() {
         return inJail;
     }
 
+    /**
+     * Method that changes the position of the player on the board
+     * @author Vicente Rivera
+     */
     public void setPosition(int newPosition) {
         position = newPosition;
     }
@@ -36,9 +60,12 @@ public class Player {
         consecutiveDoubles = 0;
     }
 
-    public void takeTurn() {
-        //Todo: change takeTurn method to take in a GameBoard object once GameBoard is implemented
-        //public void takeTurn(GameBoard board)
+    /**
+     * Method for a player to take a turn in the game
+     * @param board The game board that the player is playing on
+     * @author Vicente Rivera
+     */
+    public void takeTurn(GameBoard board){
 
         int[] rollResults = diceRoll();
         int rollValue = rollResults[0];
@@ -64,10 +91,15 @@ public class Player {
             passTurn();
         }
         else {
-            //takeTurn(board);
+            takeTurn(board);
         }
     }
 
+    /**
+     * Method for rolling the dice when a player takes their turn
+     * @return An array of integers representing the two dice rolls and if the player rolled a double
+     * @author Vicente Rivera
+     */
     public int[] diceRoll() {
         Dice dice = new Dice();
         int roll1 = dice.Roll();
@@ -84,6 +116,10 @@ public class Player {
         return new int[]{sum, 0};
     }
 
+    /**
+     * Method for passing the turn to the next player
+     * @author Vicente Rivera
+     */
     public void passTurn() {
         System.out.println("Turn Ended");
     }
