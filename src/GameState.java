@@ -15,7 +15,7 @@ public class GameState {
 
     public void takeTurn(){
         Player player = players.get(currentPlayerIndex);
-        //Todo: Impliment the takeTurn method in the player class but need the board done first
+        //Todo: Implement the takeTurn method in the player class but need the board done first
         //player.takeTurn(board);
         currentPlayerIndex = (currentPlayerIndex + 1) % players.size();
     }

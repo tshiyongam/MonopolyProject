@@ -56,9 +56,9 @@ public class PropertyElement extends BoardElement{
      */
     @Override
     public void triggerAction(Player player){
-        if(owner == null)
+        /*if(owner == null)
             player.offerToBuyProperty(this);
         else if(owner != player)
-            player.payRent(owner, rent);
+            player.payRent(owner, rent);*/
     }
 }
