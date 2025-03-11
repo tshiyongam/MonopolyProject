@@ -11,6 +11,7 @@ public class CommunityChestCard extends BoardElement implements Card {
 
     /**
      * Constructor for the CommunityChestCard class.
+     * @param name String representing the Community Chest
      * @author Mael Tshiyonga
      */
     public CommunityChestCard(String name) {

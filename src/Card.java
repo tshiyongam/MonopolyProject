@@ -17,7 +17,6 @@ public interface Card {
 
     /**
      * Method to shuffle the deck.
-     *
      * @param rand Random object
      * @param cards ArrayList of cards
      * @return String representing the drawn card
