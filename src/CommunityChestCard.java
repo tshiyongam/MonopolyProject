@@ -1,9 +1,9 @@
+// Class that manages the Community Chest cards and their information for the Monopoly board
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
-
 public class CommunityChestCard extends BoardElement implements Card {
 
     private final ArrayList<String> communityChestCards;

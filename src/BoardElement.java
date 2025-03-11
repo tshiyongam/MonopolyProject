@@ -1,7 +1,7 @@
+//Abstract class that represents a general space on the game board.
 import java.util.ArrayList;
 import java.util.List;
 
-//Abstract class that represents a general space on the game board.
 public abstract class BoardElement {
 
     private final String name;

@@ -1,4 +1,4 @@
-//Board Space implementation for Properties
+//Board Space implementation for tax elements
 public class TaxElement extends BoardElement{
     private final int price;
     private Player owner;

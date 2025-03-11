@@ -1,3 +1,4 @@
+// Class that manages the Chance cards and their information for the Monopoly board
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.io.File;

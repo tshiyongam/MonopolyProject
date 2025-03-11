@@ -1,6 +1,6 @@
+// Interface for the Card class.
 import java.util.Random;
 import java.util.ArrayList;
-
 public interface Card {
     /**
      * Method to draw a card from the deck.

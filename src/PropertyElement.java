@@ -1,4 +1,5 @@
-public class PropertyElement extends BoardElement{
+// Class that manages the Title Deeds of the properties on the Monopoly board
+public class PropertyElement extends BoardElement {
     private final int price;
     private final int rent;
     private Player owner;

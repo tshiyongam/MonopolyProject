@@ -1,4 +1,4 @@
-//Board Space implementation for Properties
+//Board Space implementation for utilities
 public class Utilities extends BoardElement {
     private final int price;
     private Player owner;
@@ -13,7 +13,6 @@ public class Utilities extends BoardElement {
         super(name, SpaceType.INCOME_TAX);
         this.price = price;
         this.owner = null;
-
     }
 
     /**
@@ -44,12 +43,12 @@ public class Utilities extends BoardElement {
     public void setOwner(Player player) {
         owner = player;
     }
+
     /**
      * Method to be implemented which triggers action upon a player
      * @param player Player being acted upon
      * @author Aidan Casey
      */
-
     @Override
     public void triggerAction(Player player) {
 

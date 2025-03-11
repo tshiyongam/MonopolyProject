@@ -1,5 +1,5 @@
+// Implementation of the GameBoard class that represents the game board of Monopoly.
 import java.util.ArrayList;
-
 public class GameBoard {
 
     private final ArrayList<BoardElement> boardElements;
@@ -59,13 +59,16 @@ public class GameBoard {
         boardElements.add(new PropertyElement("Park Place",350,35));
         boardElements.add(new TaxElement("Luxury Tax",200));
         boardElements.add(new PropertyElement("Boardwalk",400,50));
-
-
-
-
-
-
     }
 
+    /**
+     * Method to get the board element at a given position.
+     * @param position The position of the board element to get.
+     * @return The board element at the given position.
+     * @author Mael Tshiyonga
+     */
+    public BoardElement getBoardElement(int position) {
+        return boardElements.get(position);
+    }
 
 }

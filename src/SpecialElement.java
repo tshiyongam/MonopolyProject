@@ -1,4 +1,4 @@
-//Board Space implementation for Properties
+//Board Space implementation for special elements
 public class SpecialElement extends BoardElement {
     private Player owner;
 

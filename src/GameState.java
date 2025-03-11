@@ -1,3 +1,4 @@
+// Class that manages the current state of the game
 import java.util.List;
 /**
  * Constructor for a Game State Element
@@ -7,15 +8,17 @@ public class GameState {
     private GameBoard board;
     private List<Player> players;
     private int currentPlayerIndex;
+    private SpaceType spaceType;
     /**
      * Method for starting a new game of Monopoly
      * @param players List of players in the game
      * @author Vicente Rivera
      */
-    public void GameStart(List<Player> players){
+    public void GameStart(List<Player> players) {
         this.players = players;
         this.board = new GameBoard();
         this.currentPlayerIndex = 0;
+        spaceType = SpaceType.GO;
     }
     /**
      * Method for taking determining the current player and taking their turn

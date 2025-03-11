@@ -3,6 +3,7 @@ import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Scanner;
 
+// Class that manages the Title Deeds and their information for the properties on the Monopoly board
 public class TitleDeed {
 
     private static final HashMap<String, TitleDeed> deeds = new HashMap<>();
@@ -16,6 +17,8 @@ public class TitleDeed {
     private int hotelCost;
     private int houseCount = 0;
     private boolean hasHotel = false;
+    // TODO: Start connecting the TitleDeed class to the Game Board, specifically when a player
+    //  lands on that space
 
     /**
      * Constructor for the TitleDeed class.

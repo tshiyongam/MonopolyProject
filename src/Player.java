@@ -1,20 +1,19 @@
+// Contains the Player class which represents a player in the game
 public class Player {
-    private String name;
+    private final String name;
     private int consecutiveDoubles = 0;
     private int position = 0;
     private int money = 1500;
     private  boolean inJail = false;
-    private Token token; ;
-    //Todo: Set players token when token class is made
 
     /**
      * Constructor for a Player object
      * @param name Name of the player
      * @author Vicente Rivera
      */
-    public Player(String name, TokenType token) {
+    public Player(String name, TokenType tokenType) {
         this.name = name;
-        this.token = new Token(token);
+        Token token = new Token(tokenType);
     }
 
     /**
@@ -64,7 +63,7 @@ public class Player {
      * @param board The game board that the player is playing on
      * @author Vicente Rivera
      */
-    public void takeTurn(GameBoard board){
+    public void takeTurn(GameBoard board) {
 
         int[] rollResults = diceRoll();
         int rollValue = rollResults[0];
@@ -82,16 +81,19 @@ public class Player {
             return;
         }
 
-        //Todo: Add movement to player based on rollValue once GameBoard is implemented
+        position += rollValue;
+        if (position >= 40) {
+            position -= 40;
+            System.out.println(name + " passed GO and collected $200");
+            money += 200;
+        }
 
-
-        if (!doubles){
+        if (!doubles) {
             consecutiveDoubles = 0;
             passTurn();
         }
-        else {
+        else
             takeTurn(board);
-        }
     }
 
     /**
@@ -112,7 +114,7 @@ public class Player {
             return new int[]{sum, 1};
         }
         consecutiveDoubles = 0;
-        return new int[]{sum, 0};
+        return new int[] {sum, 0};
     }
 
     /**
