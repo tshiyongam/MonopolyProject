@@ -4,16 +4,18 @@ import java.io.File;
 import java.util.Scanner;
 import java.util.Random;
 
-public class ChanceCard implements Card {
+public class Chance extends BoardElement implements Card {
 
     private final ArrayList<String> chanceCards;
     private final Random rand;
 
     /**
-     * Constructor for the ChanceCard class.
+     * Constructor for the Chance class.
+     *
      * @author Mael Tshiyonga
      */
-    public ChanceCard() {
+    public Chance(String name) {
+        super(name, SpaceType.CHANCE);
         chanceCards = new ArrayList<>();
         rand = new Random();
         loadCards();
@@ -21,19 +23,36 @@ public class ChanceCard implements Card {
 
     /**
      * Method to draw a card from the Chance deck.
+     *
      * @author Mael Tshiyonga
      */
     @Override
     public String drawCard() {
         if (chanceCards.isEmpty())
             loadCards();
-
         return shuffledCard(rand, chanceCards);
     }
 
     /**
+     * Method to load the contents of the Chance cards from a text file.
+     *
+     * @author Mael Tshiyonga
+     */
+    private void loadCards() {
+        try {
+            Scanner scanner = new Scanner(new File("texts/chance.txt"));
+            while (scanner.hasNextLine())
+                chanceCards.add(scanner.nextLine());
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
      * Method to shuffle the Chance deck.
-     * @param rand Random object
+     *
+     * @param rand        Random object
      * @param chanceCards ArrayList of Chance cards
      * @return String representing the drawn card
      * @author Mael Tshiyonga
@@ -50,23 +69,8 @@ public class ChanceCard implements Card {
     }
 
     /**
-     * Method to load the contents of the Chance cards from a text file.
-     * @author Mael Tshiyonga
-     */
-    private void loadCards() {
-        try {
-            Scanner scanner = new Scanner(new File("texts/chance.txt"));
-            while (scanner.hasNextLine())
-                chanceCards.add(scanner.nextLine());
-            scanner.close();
-        }
-        catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    /**
      * Method to reset the Chance deck.
+     *
      * @author Mael Tshiyonga
      */
     @Override
@@ -74,4 +78,10 @@ public class ChanceCard implements Card {
         chanceCards.clear();
         loadCards();
     }
+
+    @Override
+    public void triggerAction(Player player) {
+        // TODO Auto-generated method stub
+    }
 }
+

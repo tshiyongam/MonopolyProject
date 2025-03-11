@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-public class CommunityChestCard implements Card {
-
+public class CommunityChest extends BoardElement implements Card {
 
     private final ArrayList<String> communityChestCards;
     private final Random rand;
 
     /**
-     * Constructor for the CommunityChestCard class.
-     * Author: Mael Tshiyonga
+     * Constructor for the CommunityChest class.
+     * @author Mael Tshiyonga
      */
-    public CommunityChestCard() {
+    public CommunityChest(String name) {
+        super(name, SpaceType.COMMUNITY_CHEST);
         communityChestCards = new ArrayList<>();
         rand = new Random();
         loadCards();
@@ -29,7 +29,6 @@ public class CommunityChestCard implements Card {
     public String drawCard() {
         if (communityChestCards.isEmpty())
             loadCards();
-
         return shuffledCard(rand, communityChestCards);
     }
 
@@ -71,9 +70,18 @@ public class CommunityChestCard implements Card {
      * Method to reset the Community Chest deck.
      * @author Mael Tshiyonga
      */
-    @Override
     public void resetDeck() {
         communityChestCards.clear();
         loadCards();
+    }
+
+    /**
+     * Method to trigger the action of the Community Chest card.
+     * @param player The player who landed on the space.
+     * @author Mael Tshiyonga
+     */
+    @Override
+    public void triggerAction(Player player) {
+        //TODO: Implement the action of the Community Chest card
     }
 }
