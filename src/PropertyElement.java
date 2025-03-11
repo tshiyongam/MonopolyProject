@@ -8,7 +8,7 @@ public class PropertyElement extends BoardElement{
      * @param name Name of the property
      * @param price Price of the property
      * @param rent Rent of the property
-     * Author: Mael Tshiyonga
+     * @author Mael Tshiyonga
      */
     public PropertyElement(String name, int price, int rent){
         super(name, SpaceType.PROPERTY);
@@ -20,6 +20,7 @@ public class PropertyElement extends BoardElement{
     /**
      * Method to get the price of the property
      * @return int representing the price of the property
+     * @author Mael Tshiyonga
      */
     public int getPrice(){
         return price;
@@ -28,6 +29,7 @@ public class PropertyElement extends BoardElement{
     /**
      * Method to get the rent of the property
      * @return int representing the rent of the property
+     * @author Mael Tshiyonga
      */
     public int getRent(){
         return rent;
@@ -36,6 +38,7 @@ public class PropertyElement extends BoardElement{
     /**
      * Method to get the owner of the property
      * @return Player representing the owner of the property
+     * @author Mael Tshiyonga
      */
     public Player getOwner(){
         return owner;
@@ -44,6 +47,7 @@ public class PropertyElement extends BoardElement{
     /**
      * Method to set the owner of the property
      * @param player Player representing the new owner of the property
+     * @author Mael Tshiyonga
      */
     public void setOwner(Player player){
         owner = player;
@@ -52,7 +56,7 @@ public class PropertyElement extends BoardElement{
     /**
      * Method to allow the user to interact with the property
      * @param player Player representing the new owner of the property
-     * Author: Mael Tshiyonga
+     * @author Mael Tshiyonga
      */
     @Override
     public void triggerAction(Player player){

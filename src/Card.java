@@ -5,13 +5,13 @@ public interface Card {
     /**
      * Method to draw a card from the deck.
      * @return String representing the drawn card
-     * Author: Mael Tshiyonga
+     * @author Mael Tshiyonga
      */
     String drawCard();
 
     /**
      * Method to reset the deck.
-     * Author: Mael Tshiyonga
+     * @author Mael Tshiyonga
      */
     void resetDeck();
 
@@ -20,7 +20,7 @@ public interface Card {
      * @param rand Random object
      * @param cards ArrayList of cards
      * @return String representing the drawn card
-     * Author: Mael Tshiyonga
+     * @author Mael Tshiyonga
      */
     String shuffledCard(Random rand, ArrayList<String> cards);
 }

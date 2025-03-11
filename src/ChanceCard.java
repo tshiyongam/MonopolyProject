@@ -11,7 +11,7 @@ public class ChanceCard implements Card {
 
     /**
      * Constructor for the ChanceCard class.
-     * Author: Mael Tshiyonga
+     * @author Mael Tshiyonga
      */
     public ChanceCard() {
         chanceCards = new ArrayList<>();
@@ -21,7 +21,7 @@ public class ChanceCard implements Card {
 
     /**
      * Method to draw a card from the Chance deck.
-     * Author: Mael Tshiyonga
+     * @author Mael Tshiyonga
      */
     @Override
     public String drawCard() {
@@ -36,7 +36,7 @@ public class ChanceCard implements Card {
      * @param rand Random object
      * @param chanceCards ArrayList of Chance cards
      * @return String representing the drawn card
-     * Author: Mael Tshiyonga
+     * @author Mael Tshiyonga
      */
     @Override
     public String shuffledCard(Random rand, ArrayList<String> chanceCards) {
@@ -51,6 +51,7 @@ public class ChanceCard implements Card {
 
     /**
      * Method to load the contents of the Chance cards from a text file.
+     * @author Mael Tshiyonga
      */
     private void loadCards() {
         try {
@@ -66,7 +67,7 @@ public class ChanceCard implements Card {
 
     /**
      * Method to reset the Chance deck.
-     * Author: Mael Tshiyonga
+     * @author Mael Tshiyonga
      */
     @Override
     public void resetDeck() {
