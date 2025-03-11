@@ -42,12 +42,12 @@ public class RailroadElement extends BoardElement{
     public void setOwner(Player player){
         owner = player;
     }
+
     /**
      * To be used for action
      * @param player player which the action will act upon
      * @author Aidan Casey
      */
-
     @Override
     public void triggerAction(Player player) {
 

@@ -40,7 +40,7 @@ public class PropertyElement extends BoardElement{
      * @return Player representing the owner of the property
      * @author Mael Tshiyonga
      */
-    public Player getOwner(){
+    public Player getOwner() {
         return owner;
     }
 
@@ -59,7 +59,7 @@ public class PropertyElement extends BoardElement{
      * @author Mael Tshiyonga
      */
     @Override
-    public void triggerAction(Player player){
+    public void triggerAction(Player player) {
         /*if(owner == null)
             player.offerToBuyProperty(this);
         else if(owner != player)
