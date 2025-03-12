@@ -54,6 +54,27 @@ public class PlayerTests {
         Player player = new Player("Mael", TokenType.CAR);
         GameBoard board = new GameBoard();
         player.takeTurn(board);
-        assertNotNull(player.getPosition());
+        assertTrue(player.getPosition() > 1);
+
+        player.setPosition(5);
+        player.takeTurn(board);
+        assertTrue(player.getPosition() > 5);
     }
+
+    /**
+     * Test method for testing the diceRoll method in the Player class.
+     * This method tests if the dice roll is between 1 and 12 and if the second value is 0 or 1.
+     * The second value is used to determine if the player rolled doubles or not.
+     * @author Mael Tshiyonga
+     */
+    @Test
+    public void testDiceRoll() {
+        Player player = new Player("Mael", TokenType.CAR);
+        int[] rollResults = player.diceRoll();
+        assertTrue(rollResults[0] > 0);
+        assertTrue(rollResults[0] < 13);
+        assertTrue(rollResults[1] == 0 || rollResults[1] == 1);
+    }
+
+
 }

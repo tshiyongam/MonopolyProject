@@ -6,7 +6,7 @@ public abstract class BoardElement {
 
     private final String name;
     private final SpaceType type;
-    private List<Token> tokens;
+    private final List<Token> tokens;
 
     /**
      * Creates a BoardElement with a given name and space type.
@@ -17,7 +17,7 @@ public abstract class BoardElement {
     public BoardElement(String name, SpaceType type) {
         this.name = name;
         this.type = type;
-        this.tokens = new ArrayList<Token>();
+        this.tokens = new ArrayList<>();
     }
 
     /**

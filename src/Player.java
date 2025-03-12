@@ -13,7 +13,7 @@ public class Player {
      */
     public Player(String name, TokenType tokenType) {
         this.name = name;
-        Token token = new Token(tokenType);
+        new Token(tokenType);
     }
 
     /**
