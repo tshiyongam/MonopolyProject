@@ -23,7 +23,7 @@ public class PropertyElement extends BoardElement {
      * @return int representing the price of the property
      * @author Mael Tshiyonga
      */
-    public int getPrice(){
+    public int getPrice() {
         return price;
     }
 
@@ -32,7 +32,7 @@ public class PropertyElement extends BoardElement {
      * @return int representing the rent of the property
      * @author Mael Tshiyonga
      */
-    public int getRent(){
+    public int getRent() {
         return rent;
     }
 

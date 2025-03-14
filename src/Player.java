@@ -1,10 +1,15 @@
+import java.util.ArrayList;
+import java.util.Properties;
+
 // Contains the Player class which represents a player in the game
 public class Player {
     private final String name;
     private int consecutiveDoubles = 0;
     private int position = 0;
     private int money = 1500;
-    private  boolean inJail = false;
+    private boolean inJail = false;
+    private ArrayList<PropertyElement> ownedProperties = new ArrayList<>();
+    private ArrayList<PropertyElement> mortgagedProperties = new ArrayList<>();
 
     /**
      * Constructor for a Player object
@@ -51,12 +56,17 @@ public class Player {
         position = newPosition;
     }
 
+    /**
+     * Method for sending a player to jail
+     * @author Vicente Rivera
+     */
     public void goToJail() {
         System.out.println(name + " is sent to jail");
         inJail = true;
         position = 10;
         consecutiveDoubles = 0;
     }
+
 
     /**
      * Method for a player to take a turn in the game
@@ -82,11 +92,17 @@ public class Player {
         }
 
         position += rollValue;
-        if (position >= 40) {
-            position -= 40;
+        if (position >= 39 && !isInJail()) {
+            position -= 39;
+            payMoney(200);
             System.out.println(name + " passed GO and collected $200");
-            money += 200;
         }
+        else {
+            setPosition(10);
+            passTurn();
+        }
+        // TODO: Implement either rolling doubles within 3 turns, paying $50 to get out of jail,
+        //  using a "Get Out of Jail Free" card, or waiting 3 turns
 
         if (!doubles) {
             consecutiveDoubles = 0;
@@ -115,6 +131,62 @@ public class Player {
         }
         consecutiveDoubles = 0;
         return new int[] {sum, 0};
+    }
+
+    /**
+     * Method for a player to receive money
+     * @param amount Amount player is receiving from bank
+     * @author Mael Tshiyonga
+     */
+    public void receiveMoney(int amount) {
+        money += amount;
+    }
+
+    /**
+     * Method for a player to pay a certain amount of money
+     * @param amount Amount player must pay to bank
+     * @author Mael Tshiyonga
+     */
+    public void payMoney(int amount) {
+        money -= amount;
+    }
+
+    /**
+     * Method for checking if a player can pay a certain amount of money
+     * @param amount Amount being checked
+     * @return True or false
+     * @author Mael Tshiyonga
+     */
+    public boolean canPay(int amount) {
+        return money >= amount;
+    }
+
+    /**
+     * Method for adding a property to a player's list of owned properties
+     * @param deed TitleDeed object representing the property being added to the player's list of owned properties
+     * @author Mael Tshiyonga
+     */
+    public void addProperty(PropertyElement deed) {
+        ownedProperties.add(deed);
+    }
+
+    /**
+     * Method for removing a property from a player's list of owned properties
+     * @param deed TitleDeed object representing the property being removed from the player's list of owned properties
+     * @author Mael Tshiyonga
+     */
+    public void removeProperty(PropertyElement deed) {
+        ownedProperties.remove(deed);
+    }
+
+    /**
+     * Method for mortgaging a property
+     * @param deed TitleDeed object representing the property being mortgaged by the player
+     * @author Mael Tshiyonga
+     */
+    public void mortgageProperty(PropertyElement deed) {
+        ownedProperties.remove(deed);
+        mortgagedProperties.add(deed);
     }
 
     /**
