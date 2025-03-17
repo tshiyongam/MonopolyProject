@@ -1,24 +1,19 @@
-import java.util.ArrayList;
-import java.util.Properties;
-
-// Contains the Player class which represents a player in the game
 public class Player {
-    private final String name;
+    private String name;
     private int consecutiveDoubles = 0;
     private int position = 0;
-    private int money = 1500;
-    private boolean inJail = false;
-    private ArrayList<PropertyElement> ownedProperties = new ArrayList<>();
-    private ArrayList<PropertyElement> mortgagedProperties = new ArrayList<>();
+    private int balance = 1500;
+    private  boolean inJail = false;
+    private Token token;
 
     /**
      * Constructor for a Player object
      * @param name Name of the player
      * @author Vicente Rivera
      */
-    public Player(String name, TokenType tokenType) {
+    public Player(String name, Token token) {
         this.name = name;
-        new Token(tokenType);
+        this.token = token;
     }
 
     /**
@@ -28,6 +23,16 @@ public class Player {
      */
     public String getName() {
         return name;
+    }
+
+    /**
+     * Method for getting a players token type
+     * @return A string value representing the name of the player
+     * @author Vicente Rivera
+     */
+
+    public Token getToken() {
+        return token;
     }
 
     /**
@@ -56,10 +61,6 @@ public class Player {
         position = newPosition;
     }
 
-    /**
-     * Method for sending a player to jail
-     * @author Vicente Rivera
-     */
     public void goToJail() {
         System.out.println(name + " is sent to jail");
         inJail = true;
@@ -67,13 +68,12 @@ public class Player {
         consecutiveDoubles = 0;
     }
 
-
     /**
      * Method for a player to take a turn in the game
      * @param board The game board that the player is playing on
      * @author Vicente Rivera
      */
-    public void takeTurn(GameBoard board) {
+    public void takeTurn(GameBoard board){
 
         int[] rollResults = diceRoll();
         int rollValue = rollResults[0];
@@ -91,25 +91,16 @@ public class Player {
             return;
         }
 
-        position += rollValue;
-        if (position >= 39 && !isInJail()) {
-            position -= 39;
-            payMoney(200);
-            System.out.println(name + " passed GO and collected $200");
-        }
-        else {
-            setPosition(10);
-            passTurn();
-        }
-        // TODO: Implement either rolling doubles within 3 turns, paying $50 to get out of jail,
-        //  using a "Get Out of Jail Free" card, or waiting 3 turns
+        //Todo: Add movement to player based on rollValue once GameBoard is implemented
 
-        if (!doubles) {
+
+        if (!doubles){
             consecutiveDoubles = 0;
             passTurn();
         }
-        else
+        else {
             takeTurn(board);
+        }
     }
 
     /**
@@ -130,64 +121,10 @@ public class Player {
             return new int[]{sum, 1};
         }
         consecutiveDoubles = 0;
-        return new int[] {sum, 0};
+        return new int[]{sum, 0};
     }
 
-    /**
-     * Method for a player to receive money
-     * @param amount Amount player is receiving from bank
-     * @author Mael Tshiyonga
-     */
-    public void receiveMoney(int amount) {
-        money += amount;
-    }
 
-    /**
-     * Method for a player to pay a certain amount of money
-     * @param amount Amount player must pay to bank
-     * @author Mael Tshiyonga
-     */
-    public void payMoney(int amount) {
-        money -= amount;
-    }
-
-    /**
-     * Method for checking if a player can pay a certain amount of money
-     * @param amount Amount being checked
-     * @return True or false
-     * @author Mael Tshiyonga
-     */
-    public boolean canPay(int amount) {
-        return money >= amount;
-    }
-
-    /**
-     * Method for adding a property to a player's list of owned properties
-     * @param deed TitleDeed object representing the property being added to the player's list of owned properties
-     * @author Mael Tshiyonga
-     */
-    public void addProperty(PropertyElement deed) {
-        ownedProperties.add(deed);
-    }
-
-    /**
-     * Method for removing a property from a player's list of owned properties
-     * @param deed TitleDeed object representing the property being removed from the player's list of owned properties
-     * @author Mael Tshiyonga
-     */
-    public void removeProperty(PropertyElement deed) {
-        ownedProperties.remove(deed);
-    }
-
-    /**
-     * Method for mortgaging a property
-     * @param deed TitleDeed object representing the property being mortgaged by the player
-     * @author Mael Tshiyonga
-     */
-    public void mortgageProperty(PropertyElement deed) {
-        ownedProperties.remove(deed);
-        mortgagedProperties.add(deed);
-    }
 
     /**
      * Method for passing the turn to the next player
@@ -195,5 +132,33 @@ public class Player {
      */
     public void passTurn() {
         System.out.println("Turn Ended");
+    }
+
+    /**
+     * Method for passing the turn to the next player
+     * @param amount The amount of money a player is recieving
+     * @author Vicente Rivera
+     */
+    public void receiveMoney(int amount) {
+        balance += amount;
+    }
+
+    /**
+     * Method for passing the turn to the next player
+     * @param amount The amount of money a player needs to be able to pay
+     * @return A boolean value representing if the player can pay the amount or not
+     * @author Vicente Rivera
+     */
+    public boolean canPay(int amount) {
+        return balance >= amount;
+    }
+
+    /**
+     * Method for passing the turn to the next player
+     * @param amount The amount of money a player is paying
+     * @author Vicente Rivera
+     */
+    public void payMoney(int amount) {
+        balance -= amount;
     }
 }
