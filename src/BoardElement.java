@@ -68,7 +68,8 @@ public abstract class BoardElement {
     /**
      * Abstract method to be implemented by subclasses for handling specific actions when a player lands on the space.
      * @param player The player who landed on the space.
+     * @param banker The banker object to be used in the action.
      * @author Connor Moyer
      */
-    public abstract void triggerAction(Player player);
+    public abstract void triggerAction(Player player, Banker banker);
 }

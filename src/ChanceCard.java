@@ -81,8 +81,62 @@ public class ChanceCard extends BoardElement implements Card {
      * @author Mael Tshiyonga
      */
     @Override
-    public void triggerAction(Player player) {
-        // TODO Auto-generated method stub
+    public void triggerAction(Player player, Banker banker) {
+        System.out.println(player.getName() + " has landed on a Chance Space!");
+        System.out.println(drawCard());
+
+        processCard(player, banker, drawCard());
     }
+
+    /**
+     * Method to process the card drawn.
+     * @param player Player object
+     * @param banker Banker object
+     * @param card String representing the card drawn
+     * @author Mael Tshiyonga
+     */
+    @Override
+    public void processCard(Player player, Banker banker, String card) {
+        if (card.equalsIgnoreCase("Advance to Boardwalk."))
+            player.setPosition(39);
+        else if (card.equalsIgnoreCase("Advance to Go.")) {
+            player.setPosition(0);
+            player.receiveMoney(200);
+        }
+        else if (card.equalsIgnoreCase("Advance to Illinois Avenue.")){
+            player.setPosition(24);
+        }
+        else if (card.equalsIgnoreCase("Advance to St. Charles Place.")) {
+            player.setPosition(11);
+
+        } else if (card.equalsIgnoreCase("Bank pays you dividend of $50."))
+            player.receiveMoney(50);
+         else if (card.equalsIgnoreCase("Get Out of Jail Free.")) {
+            player.setHasGetOutOfJailCard(true);
+        } else if (card.equalsIgnoreCase("Go back 3 spaces."))
+            player.setPosition(player.getPosition() - 3);
+         else if (card.equalsIgnoreCase("Go to Jail.")) {
+            player.goToJail();
+        } else if (card.equalsIgnoreCase("Make general repairs on all your property.")) {
+
+        } else if (card.equalsIgnoreCase("Pay poor tax of $15.")) {
+            player.payMoney(15);
+        } else if (card.equalsIgnoreCase("Take a trip to Reading Railroad.")) {
+            player.setPosition(5);
+        } else if (card.equalsIgnoreCase("Take a walk on the Boardwalk.")) {
+            player.setPosition(39);
+        } else if (card.equalsIgnoreCase("You have been elected chairman of the board. Pay each player $50.")) {
+            for (Player p : banker.getPlayers()) {
+                if (!p.equals(player))
+                    p.setBalance(p.getBalance() + 50);
+            }
+            player.setBalance(player.getBalance() - 50 * (banker.getPlayers().size() - 1));
+        } else if (card.equalsIgnoreCase("Your building loan matures. Collect $150."))
+            player.receiveMoney(150);
+
+    }
+
+
+
 }
 

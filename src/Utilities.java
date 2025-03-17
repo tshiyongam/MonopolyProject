@@ -47,10 +47,11 @@ public class Utilities extends BoardElement {
     /**
      * Method to be implemented which triggers action upon a player
      * @param player Player being acted upon
+     * @param banker Banker object to be used in the action
      * @author Aidan Casey
      */
     @Override
-    public void triggerAction(Player player) {
+    public void triggerAction(Player player, Banker banker) {
 
     }
 }

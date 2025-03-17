@@ -13,6 +13,7 @@ public class GameBoard {
         this.boardElements = new ArrayList<>();
         initializeBoard();
     }
+
     /**
      * Initialization of the game board. Adds a new element for
      * each space on the Monopoly board to an array list in order.
@@ -31,7 +32,7 @@ public class GameBoard {
         boardElements.add(new PropertyElement("Connecticut Avenue", 120, 8));
         boardElements.add(new SpecialElement("Jail"));
         boardElements.add(new PropertyElement("St. Charles Place",140, 10));
-        boardElements.add(new Utilities("Electric Company",150));
+        boardElements.add(new Utilities("Electric ",150));
         boardElements.add(new PropertyElement("States Avenue",140,10));
         boardElements.add(new PropertyElement("Virginia Avenue", 160, 12));
         boardElements.add(new RailroadElement("Pennsylvania Railroad", 200));
@@ -70,5 +71,4 @@ public class GameBoard {
     public BoardElement getBoardElement(int position) {
         return boardElements.get(position);
     }
-
 }

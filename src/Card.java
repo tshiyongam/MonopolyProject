@@ -23,4 +23,13 @@ public interface Card {
      * @author Mael Tshiyonga
      */
     String shuffledCard(Random rand, ArrayList<String> cards);
+
+    /**
+     * Method to process the card drawn.
+     * @param player Player object
+     * @param banker Banker object
+     * @param card String representing the card drawn
+     * @author Mael Tshiyonga
+     */
+    void processCard(Player player, Banker banker, String card) {}
 }

@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Properties;
 
 // Contains the Player class which represents a player in the game
 public class Player {
@@ -8,8 +7,9 @@ public class Player {
     private int position = 0;
     private int money = 1500;
     private boolean inJail = false;
-    private ArrayList<PropertyElement> ownedProperties = new ArrayList<>();
-    private ArrayList<PropertyElement> mortgagedProperties = new ArrayList<>();
+    private boolean hasGetOutOfJailCard = false;
+    private final ArrayList<PropertyElement> ownedProperties = new ArrayList<>();
+    private final ArrayList<PropertyElement> mortgagedProperties = new ArrayList<>();
 
     /**
      * Constructor for a Player object
@@ -98,7 +98,7 @@ public class Player {
             System.out.println(name + " passed GO and collected $200");
         }
         else {
-            setPosition(10);
+            goToJail();
             passTurn();
         }
         // TODO: Implement either rolling doubles within 3 turns, paying $50 to get out of jail,
@@ -189,6 +189,10 @@ public class Player {
         mortgagedProperties.add(deed);
     }
 
+    public void setHasGetOutOfJailCard(boolean hasGetOutOfJailCard) {
+        this.hasGetOutOfJailCard = hasGetOutOfJailCard;
+    }
+
     /**
      * Method for passing the turn to the next player
      * @author Vicente Rivera
@@ -196,4 +200,7 @@ public class Player {
     public void passTurn() {
         System.out.println("Turn Ended");
     }
+
+
+
 }

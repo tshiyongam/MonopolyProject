@@ -33,10 +33,11 @@ public class SpecialElement extends BoardElement {
     /**
      * To be implemented for action upon player
      * @param player Player associated with the action
+     * @param banker Banker object to be used in the action
      * @author Aidan Casey
      */
     @Override
-    public void triggerAction(Player player) {
+    public void triggerAction(Player player, Banker banker) {
 
     }
 }

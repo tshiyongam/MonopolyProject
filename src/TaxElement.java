@@ -46,10 +46,11 @@ public class TaxElement extends BoardElement{
     /**
      * Trigger action to be implemented
      * @param player The player who landed on the space.
+     * @param banker The banker object to be used in the action.
      * @author Aidan Casey
      */
     @Override
-    public void triggerAction(Player player) {
+    public void triggerAction(Player player, Banker banker) {
 
     }
 

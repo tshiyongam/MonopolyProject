@@ -57,10 +57,11 @@ public class PropertyElement extends BoardElement {
     /**
      * Method to allow the user to interact with the property
      * @param player Player representing the new owner of the property
+     * @param banker Banker object to be used in the action
      * @author Mael Tshiyonga
      */
     @Override
-    public void triggerAction(Player player) {
+    public void triggerAction(Player player, Banker banker) {
         /*if(owner == null)
             player.offerToBuyProperty(this);
         else if(owner != player)

@@ -82,7 +82,10 @@ public class CommunityChestCard extends BoardElement implements Card {
      * @author Mael Tshiyonga
      */
     @Override
-    public void triggerAction(Player player) {
-        //TODO: Implement the action of the Community Chest card
+    public void triggerAction(Player player, Banker banker) {
+        System.out.println(player.getName() + " has landed on a Community Chest Space!");
+        System.out.println(drawCard());
+
+        processCard(player, banker, drawCard());
     }
 }

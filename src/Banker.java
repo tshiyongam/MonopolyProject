@@ -90,4 +90,5 @@ public class Banker {
         player.mortgageProperty(titleDeed);
         System.out.println(player.getName() + " has mortgaged " + titleDeed.getName() + " for $" + titleDeed.getPrice() / 2 + " dollars.");
     }
+
 }
