@@ -9,11 +9,12 @@ public class Player {
     /**
      * Constructor for a Player object
      * @param name Name of the player
+     * @param tokenType The type of token the player will use
      * @author Vicente Rivera
      */
-    public Player(String name, Token token) {
+    public Player(String name, TokenType tokenType) {
         this.name = name;
-        this.token = token;
+        this.token = new Token(tokenType);
     }
 
     /**
