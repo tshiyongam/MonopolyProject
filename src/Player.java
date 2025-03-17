@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Properties;
 
 // Contains the Player class which represents a player in the game
 public class Player {
@@ -7,13 +8,14 @@ public class Player {
     private int position = 0;
     private int money = 1500;
     private boolean inJail = false;
-    private boolean hasGetOutOfJailCard = false;
-    private final ArrayList<PropertyElement> ownedProperties = new ArrayList<>();
-    private final ArrayList<PropertyElement> mortgagedProperties = new ArrayList<>();
+    private ArrayList<PropertyElement> ownedProperties = new ArrayList<>();
+    private ArrayList<PropertyElement> mortgagedProperties = new ArrayList<>();
+    private Token token;
 
     /**
      * Constructor for a Player object
      * @param name Name of the player
+     * @param tokenType The type of token the player will use
      * @author Vicente Rivera
      */
     public Player(String name, TokenType tokenType) {
@@ -28,6 +30,16 @@ public class Player {
      */
     public String getName() {
         return name;
+    }
+
+    /**
+     * Method for getting a players token type
+     * @return A string value representing the name of the player
+     * @author Vicente Rivera
+     */
+
+    public Token getToken() {
+        return token;
     }
 
     /**
@@ -200,7 +212,4 @@ public class Player {
     public void passTurn() {
         System.out.println("Turn Ended");
     }
-
-
-
 }
