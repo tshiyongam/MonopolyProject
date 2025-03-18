@@ -6,6 +6,12 @@ import java.util.Set;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        Player playerOne = new Player("Player 1", TokenType.DOG);
+        Player playerTwo = new Player("Player 2", TokenType.HAT);
+        GameBoard gameBoardOne = new GameBoard();
+        playerOne.takeTurn(gameBoardOne);
+        playerTwo.takeTurn(gameBoardOne);
+
         ChanceCard chanceCard = new ChanceCard("Chance");
         Set<String> outcomes = new HashSet<>();
         for (int i = 0; i < 16; i++)

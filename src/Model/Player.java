@@ -111,10 +111,6 @@ public class Player {
             payMoney(200);
             System.out.println(name + " passed GO and collected $200");
         }
-        else {
-            goToJail();
-            passTurn();
-        }
         // TODO: Implement either rolling doubles within 3 turns, paying $50 to get out of jail,
         //  using a "Get Out of Jail Free" card, or waiting 3 turns
 
@@ -137,9 +133,9 @@ public class Player {
         int roll2 = dice.Roll();
         int sum = roll1 + roll2;
 
-        System.out.println("You rolled a " + roll1 + " and a " + roll2);
+        System.out.println(name + " rolled a " + roll1 + " and a " + roll2);
         if (roll1 == roll2) {
-            System.out.println("You rolled a double! Roll again");
+            System.out.println(name + " rolled a double! Roll again");
             consecutiveDoubles++;
             return new int[]{sum, 1};
         }
