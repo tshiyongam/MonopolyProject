@@ -132,9 +132,9 @@ public class Player {
         int roll2 = dice.Roll();
         int sum = roll1 + roll2;
 
-        System.out.println("You rolled a " + roll1 + " and a " + roll2);
+        System.out.println(name + " rolled a " + roll1 + " and a " + roll2);
         if (roll1 == roll2) {
-            System.out.println("You rolled a double! Roll again");
+            System.out.println(name + " rolled a double! Roll again");
             consecutiveDoubles++;
             return new int[]{sum, 1};
         }
