@@ -118,7 +118,7 @@ public class ChanceCard extends BoardElement implements Card {
          else if (card.equalsIgnoreCase("Go to Jail.")) {
             player.goToJail();
         } else if (card.equalsIgnoreCase("Make general repairs on all your property.")) {
-
+             // TODO: Implement the ability to pay $25 for each house and $100 for each hotel
         } else if (card.equalsIgnoreCase("Pay poor tax of $15.")) {
             player.payMoney(15);
         } else if (card.equalsIgnoreCase("Take a trip to Reading Railroad.")) {

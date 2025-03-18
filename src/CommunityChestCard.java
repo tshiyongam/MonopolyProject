@@ -88,4 +88,45 @@ public class CommunityChestCard extends BoardElement implements Card {
 
         processCard(player, banker, drawCard());
     }
+
+    /**
+     * Method to process the card drawn.
+     * @param player Player object
+     * @param banker Banker object
+     * @param card String representing the card drawn
+     * @author Mael Tshiyonga
+     */
+    @Override
+    public void processCard(Player player, Banker banker, String card) {
+        switch (card) {
+            case "Advance to Go. Collect $200." -> player.setPosition(0);
+            case "Bank error in your favor. Collect $200." -> player.receiveMoney(200);
+            case "Doctor's fees. Pay $50." -> player.payMoney(50);
+            case "Get Out of Jail Free." -> player.setHasGetOutOfJailCard(true);
+            case "Go to Jail. Do not pass Go. Do not collect $200." -> player.goToJail();
+            case "Grand Opera Night. Collect $50 from every player for opening night seats." -> {
+                for (Player p : banker.getPlayers()) {
+                    if (!p.equals(player))
+                        p.payMoney(50);
+                    player.receiveMoney(banker.getPlayers().size() * 50);
+                }
+            }
+            case "Holiday Fund matures. Collect $100.", "You inherit $100.", "Life insurance matures. Collect $100." -> player.receiveMoney(100);
+            case "Income tax refund. Collect $20." -> player.receiveMoney(20);
+            case "It is your birthday. Collect $10 from every player." -> {
+                for (Player p : banker.getPlayers()) {
+                    if (!p.equals(player))
+                        p.payMoney(10);
+                    player.receiveMoney(banker.getPlayers().size() * 10);
+                }
+            }
+            case "Pay hospital fees of $100." -> player.payMoney(100);
+            case "Pay school fees of $150." -> player.payMoney(150);
+            case "Receive $25 consultancy fee." -> player.receiveMoney(25);
+            case "You are assessed for street repairs. Pay $40 per house and $115 per hotel." -> {
+                // TODO: Implement the ability to pay $40 for each house and $115 for each hotel
+            }
+            case "You have won second prize in a beauty contest. Collect $10." -> player.receiveMoney(10);
+        }
+    }
 }

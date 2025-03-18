@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,6 +8,7 @@ public class Banker {
     private int houseCount;
     private int hotelCount;
     private Map<String, PropertyElement> titleDeeds;
+    private ArrayList<Player> players;
 
 
     /**
@@ -90,5 +92,14 @@ public class Banker {
         player.mortgageProperty(titleDeed);
         System.out.println(player.getName() + " has mortgaged " + titleDeed.getName() + " for $" + titleDeed.getPrice() / 2 + " dollars.");
     }
+
+    /**
+     * Method that gets an ArrayList of players.
+     * @return ArrayList of players in the game
+     */
+    public ArrayList<Player> getPlayers() {
+        return players;
+    }
+
 
 }

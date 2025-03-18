@@ -8,6 +8,7 @@ public class Player {
     private int position = 0;
     private int money = 1500;
     private boolean inJail = false;
+    private boolean hasGetOutOfJailCard = false;
     private ArrayList<PropertyElement> ownedProperties = new ArrayList<>();
     private ArrayList<PropertyElement> mortgagedProperties = new ArrayList<>();
     private Token token;
@@ -148,7 +149,7 @@ public class Player {
     /**
      * Method for a player to receive money
      * @param amount Amount player is receiving from bank
-     * @author Mael Tshiyonga
+     * @author Mael Tshiyonga & Vicente Rivera
      */
     public void receiveMoney(int amount) {
         money += amount;
@@ -157,9 +158,11 @@ public class Player {
     /**
      * Method for a player to pay a certain amount of money
      * @param amount Amount player must pay to bank
-     * @author Mael Tshiyonga
+     * @author Mael Tshiyonga & Vicente Rivera
      */
     public void payMoney(int amount) {
+        if (!canPay(amount))
+            bankrupt();
         money -= amount;
     }
 
@@ -167,7 +170,7 @@ public class Player {
      * Method for checking if a player can pay a certain amount of money
      * @param amount Amount being checked
      * @return True or false
-     * @author Mael Tshiyonga
+     * @author Mael Tshiyonga & Vicente Rivera
      */
     public boolean canPay(int amount) {
         return money >= amount;
@@ -201,8 +204,36 @@ public class Player {
         mortgagedProperties.add(deed);
     }
 
+    /**
+     * Method for determining whether a player has a "Get Out of Jail Free" card
+     * @param hasGetOutOfJailCard Boolean value representing whether the player has a "Get Out of Jail Free" card or not
+     * @author Mael Tshiyonga
+     */
     public void setHasGetOutOfJailCard(boolean hasGetOutOfJailCard) {
         this.hasGetOutOfJailCard = hasGetOutOfJailCard;
+    }
+
+    /**
+     * Method for getting the balance of a player
+     * @return An integer value representing the balance of the player in dollars
+     * @author Mael Tshiyonga
+     */
+    public int getBalance() {
+        return money;
+    }
+
+    /**
+     * Method for setting the balance of a player
+     * @param amount An integer value representing the new balance of the player in dollars
+     * @author Mael Tshiyonga
+     */
+    public void setBalance(int amount) {
+        money = amount;
+    }
+
+
+    public void bankrupt() {
+
     }
 
     /**
