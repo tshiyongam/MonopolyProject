@@ -110,10 +110,6 @@ public class Player {
             payMoney(200);
             System.out.println(name + " passed GO and collected $200");
         }
-        else {
-            goToJail();
-            passTurn();
-        }
         // TODO: Implement either rolling doubles within 3 turns, paying $50 to get out of jail,
         //  using a "Get Out of Jail Free" card, or waiting 3 turns
 
