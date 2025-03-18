@@ -31,5 +31,5 @@ public interface Card {
      * @param card String representing the card drawn
      * @author Mael Tshiyonga
      */
-    void processCard(Player player, Banker banker, String card) {}
+    void processCard(Player player, Banker banker, String card);
 }

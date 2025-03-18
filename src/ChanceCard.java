@@ -84,7 +84,6 @@ public class ChanceCard extends BoardElement implements Card {
     public void triggerAction(Player player, Banker banker) {
         System.out.println(player.getName() + " has landed on a Chance Space!");
         System.out.println(drawCard());
-
         processCard(player, banker, drawCard());
     }
 
@@ -103,12 +102,11 @@ public class ChanceCard extends BoardElement implements Card {
             player.setPosition(0);
             player.receiveMoney(200);
         }
-        else if (card.equalsIgnoreCase("Advance to Illinois Avenue.")){
+        else if (card.equalsIgnoreCase("Advance to Illinois Avenue.")) {
             player.setPosition(24);
         }
         else if (card.equalsIgnoreCase("Advance to St. Charles Place.")) {
             player.setPosition(11);
-
         } else if (card.equalsIgnoreCase("Bank pays you dividend of $50."))
             player.receiveMoney(50);
          else if (card.equalsIgnoreCase("Get Out of Jail Free.")) {
@@ -118,7 +116,10 @@ public class ChanceCard extends BoardElement implements Card {
          else if (card.equalsIgnoreCase("Go to Jail.")) {
             player.goToJail();
         } else if (card.equalsIgnoreCase("Make general repairs on all your property.")) {
-             // TODO: Implement the ability to pay $25 for each house and $100 for each hotel
+            for (int i = 0; i < banker.getHouseCount(); i++)
+                player.payMoney(25);
+            for (int i = 0; i < banker.getHotelCount(); i++)
+                player.payMoney(100);
         } else if (card.equalsIgnoreCase("Pay poor tax of $15.")) {
             player.payMoney(15);
         } else if (card.equalsIgnoreCase("Take a trip to Reading Railroad.")) {

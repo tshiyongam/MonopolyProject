@@ -124,7 +124,10 @@ public class CommunityChestCard extends BoardElement implements Card {
             case "Pay school fees of $150." -> player.payMoney(150);
             case "Receive $25 consultancy fee." -> player.receiveMoney(25);
             case "You are assessed for street repairs. Pay $40 per house and $115 per hotel." -> {
-                // TODO: Implement the ability to pay $40 for each house and $115 for each hotel
+                for (int i = 0; i < banker.getHouseCount(); i++)
+                    player.payMoney(40);
+                for (int i = 0; i < banker.getHotelCount(); i++)
+                    player.payMoney(115);
             }
             case "You have won second prize in a beauty contest. Collect $10." -> player.receiveMoney(10);
         }

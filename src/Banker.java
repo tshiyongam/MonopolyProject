@@ -96,10 +96,28 @@ public class Banker {
     /**
      * Method that gets an ArrayList of players.
      * @return ArrayList of players in the game
+     * @author Mael Tshiyonga
      */
     public ArrayList<Player> getPlayers() {
         return players;
     }
 
+    /**
+     * Method that gets the house count.
+     * @return House count
+     * @author Mael Tshiyonga
+     */
+    public int getHouseCount() {
+        return houseCount;
+    }
+
+    /**
+     * Method that gets the hotel count.
+     * @return Hotel count
+     * @author Mael Tshiyonga
+     */
+    public int getHotelCount() {
+        return hotelCount;
+    }
 
 }

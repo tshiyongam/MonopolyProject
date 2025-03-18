@@ -72,7 +72,8 @@ public class PropertyElementTests {
     public void testTriggerAction() {
         PropertyElement propertyElement = new PropertyElement("Moravian University", 50, 20);
         Player player = new Player("Mael", TokenType.BATTLESHIP);
-        propertyElement.triggerAction(player);
+        propertyElement.triggerAction(player, new Banker());
+        //assertEquals(player, propertyElement.getOwner());
     }
 
 }
