@@ -1,3 +1,5 @@
+package Model;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,7 +14,7 @@ public class Banker {
 
 
     /**
-     * Constructor for a Banker Element
+     * Constructor for a Model.Banker Element
      * @author Mael Tshiyonga
      */
     Banker() {
@@ -23,7 +25,7 @@ public class Banker {
 
     /**
      * Method that charges a player a certain amount of money.
-     * @param player Player getting charged
+     * @param player Model.Player getting charged
      * @param amount Amount the player is getting charged
      * @author Mael Tshiyonga
      */
@@ -39,7 +41,7 @@ public class Banker {
 
     /**
      * Method that pays a player a certain amount of money.
-     * @param player Player getting paid
+     * @param player Model.Player getting paid
      * @param amount Amount the player is getting paid
      * @author Mael Tshiyonga
      */
@@ -50,7 +52,7 @@ public class Banker {
 
     /**
      * Method that charges a player a certain amount of money.
-     * @param player Player getting charged
+     * @param player Model.Player getting charged
      * @param amount Amount the player is getting charged
      * @param titleDeed TitleDeed object representing the property the player is buying
      * @author Mael Tshiyonga
@@ -69,7 +71,7 @@ public class Banker {
 
     /**
      * Method that sells a property to the bank.
-     * @param player Player selling the property
+     * @param player Model.Player selling the property
      * @param titleDeed TitleDeed object representing the property the player is selling
      * @author Mael Tshiyonga
      */
@@ -83,7 +85,7 @@ public class Banker {
 
     /**
      * Method that mortgages a property.
-     * @param player Player mortgaging the property
+     * @param player Model.Player mortgaging the property
      * @param titleDeed TitleDeed object representing the property the player is mortgaging
      * @author Mael Tshiyonga
      */

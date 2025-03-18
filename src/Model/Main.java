@@ -1,3 +1,5 @@
+package Model;
+
 import java.util.HashSet;
 import java.util.Set;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -8,8 +10,10 @@ public class Main {
         Set<String> outcomes = new HashSet<>();
         for (int i = 0; i < 16; i++)
             outcomes.add(chanceCard.drawCard());
+        System.out.println("All Chance Model.Card Outcomes Printed.");
         for (String outcome : outcomes)
             System.out.println(outcome);
+        System.out.println("All Community Chest Model.Card Outcomes Printed.");
 
         CommunityChestCard communityChestCard = new CommunityChestCard("CommunityChest");
         Set<String> outcomes2 = new HashSet<>();
@@ -18,14 +22,9 @@ public class Main {
         for (String outcome : outcomes2)
             System.out.println(outcome);
 
-        // Test space to show BoardElement functionality
-        BoardElement space = new BoardElement("Boardwalk", SpaceType.PROPERTY) {
-            @Override
-            public void triggerAction(Player player) {
-                // Implement action when a player lands on this space
-                System.out.println(player.getName() + " landed on " + getName());
-            }
-        };
+        // Test space to show Model.BoardElement functionality
+        PropertyElement space = new PropertyElement("Boardwalk",400,50);
+        space.triggerAction(new Player("Connor", TokenType.BATTLESHIP), new Banker());
 
         Token token1 = new Token(TokenType.BOOT);
         Token token2 = new Token(TokenType.CAR);

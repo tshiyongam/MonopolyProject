@@ -1,6 +1,9 @@
+import Model.GameBoard;
+import Model.Player;
+import Model.TokenType;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-// Tests for the Player class
+// Tests for the Model.Player class
 public class PlayerTests {
     /**
      * Test method for testing constructor.
@@ -17,7 +20,7 @@ public class PlayerTests {
     }
 
     /**
-     * Test method for testing the getPosition and setPosition methods in the Player class.
+     * Test method for testing the getPosition and setPosition methods in the Model.Player class.
      * @author Mael Tshiyonga
      */
     @Test
@@ -32,7 +35,7 @@ public class PlayerTests {
     }
 
     /**
-     * Test method for testing the isInJail method in the Player class.
+     * Test method for testing the isInJail method in the Model.Player class.
      * @author Mael Tshiyonga
      */
     @Test
@@ -46,7 +49,7 @@ public class PlayerTests {
     }
 
     /**
-     * Test method for testing the takeTurn method in the Player class.
+     * Test method for testing the takeTurn method in the Model.Player class.
      * @author Mael Tshiyonga
      */
     @Test
@@ -62,7 +65,7 @@ public class PlayerTests {
     }
 
     /**
-     * Test method for testing the diceRoll method in the Player class.
+     * Test method for testing the diceRoll method in the Model.Player class.
      * This method tests if the dice roll is between 1 and 12 and if the second value is 0 or 1.
      * The second value is used to determine if the player rolled doubles or not.
      * @author Mael Tshiyonga

@@ -1,4 +1,4 @@
-// Class that manages the Chance cards and their information for the Monopoly board
+package Model;// Class that manages the Chance cards and their information for the Monopoly board
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.io.File;
@@ -11,7 +11,7 @@ public class ChanceCard extends BoardElement implements Card {
     private final Random rand;
 
     /**
-     * Constructor for the ChanceCard class.
+     * Constructor for the Model.ChanceCard class.
      * @author Mael Tshiyonga
      */
     public ChanceCard(String name) {
@@ -22,7 +22,7 @@ public class ChanceCard extends BoardElement implements Card {
     }
 
     /**
-     * Method to draw a card from the ChanceCard deck.
+     * Method to draw a card from the Model.ChanceCard deck.
      * @author Mael Tshiyonga
      */
     @Override
@@ -33,7 +33,7 @@ public class ChanceCard extends BoardElement implements Card {
     }
 
     /**
-     * Method to load the contents of the ChanceCard cards from a text file.
+     * Method to load the contents of the Model.ChanceCard cards from a text file.
      * @author Mael Tshiyonga
      */
     private void loadCards() {
@@ -48,9 +48,9 @@ public class ChanceCard extends BoardElement implements Card {
     }
 
     /**
-     * Method to shuffle the ChanceCard deck.
+     * Method to shuffle the Model.ChanceCard deck.
      * @param rand Random object
-     * @param chanceCards ArrayList of ChanceCard cards
+     * @param chanceCards ArrayList of Model.ChanceCard cards
      * @return String representing the drawn card
      * @author Mael Tshiyonga
      */
@@ -66,7 +66,7 @@ public class ChanceCard extends BoardElement implements Card {
     }
 
     /**
-     * Method to reset the ChanceCard deck.
+     * Method to reset the Model.ChanceCard deck.
      * @author Mael Tshiyonga
      */
     @Override
@@ -76,8 +76,8 @@ public class ChanceCard extends BoardElement implements Card {
     }
 
     /**
-     * Method to trigger the action of the ChanceCard.
-     * @param player Player object
+     * Method to trigger the action of the Model.ChanceCard.
+     * @param player Model.Player object
      * @author Mael Tshiyonga
      */
     @Override
@@ -89,8 +89,8 @@ public class ChanceCard extends BoardElement implements Card {
 
     /**
      * Method to process the card drawn.
-     * @param player Player object
-     * @param banker Banker object
+     * @param player Model.Player object
+     * @param banker Model.Banker object
      * @param card String representing the card drawn
      * @author Mael Tshiyonga
      */

@@ -1,7 +1,8 @@
-import java.util.ArrayList;
-import java.util.Properties;
+package Model;
 
-// Contains the Player class which represents a player in the game
+import java.util.ArrayList;
+
+// Contains the Model.Player class which represents a player in the game
 public class Player {
     private final String name;
     private int consecutiveDoubles = 0;
@@ -14,7 +15,7 @@ public class Player {
     private Token token;
 
     /**
-     * Constructor for a Player object
+     * Constructor for a Model.Player object
      * @param name Name of the player
      * @param tokenType The type of token the player will use
      * @author Vicente Rivera

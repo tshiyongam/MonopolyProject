@@ -1,10 +1,13 @@
-// Tests for the Utilities class
+// Tests for the Model.Utilities class
+import Model.Player;
+import Model.TokenType;
+import Model.Utilities;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 public class UtilitiesTests {
 
     /**
-     * Test method for testing the Utilities constructor.
+     * Test method for testing the Model.Utilities constructor.
      * @author Mael Tshiyonga
      */
     @Test
@@ -16,7 +19,7 @@ public class UtilitiesTests {
     }
 
     /**
-     * Test method for testing the setOwner method in the Utilities class.
+     * Test method for testing the setOwner method in the Model.Utilities class.
      * @author Mael Tshiyonga
      */
     @Test

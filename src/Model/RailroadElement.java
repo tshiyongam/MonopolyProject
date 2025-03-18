@@ -1,3 +1,5 @@
+package Model;
+
 //Board Space implementation for Railroads
 public class RailroadElement extends BoardElement {
     private final int price;
@@ -46,7 +48,7 @@ public class RailroadElement extends BoardElement {
     /**
      * To be used for action
      * @param player player which the action will act upon
-     * @param banker Banker object to be used in the action
+     * @param banker Model.Banker object to be used in the action
      * @author Aidan Casey
      */
     @Override

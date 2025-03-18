@@ -1,4 +1,4 @@
-// Interface for the Card class.
+package Model;// Interface for the Model.Card class.
 import java.util.Random;
 import java.util.ArrayList;
 public interface Card {
@@ -26,8 +26,8 @@ public interface Card {
 
     /**
      * Method to process the card drawn.
-     * @param player Player object
-     * @param banker Banker object
+     * @param player Model.Player object
+     * @param banker Model.Banker object
      * @param card String representing the card drawn
      * @author Mael Tshiyonga
      */

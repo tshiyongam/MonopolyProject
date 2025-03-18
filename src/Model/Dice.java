@@ -1,5 +1,7 @@
+package Model;
+
 /**
- * Constructor for a Dice Element
+ * Constructor for a Model.Dice Element
  * @author Vicente Rivera
  */
 public class Dice {

@@ -1,3 +1,5 @@
+package Model;
+
 /**
  * Represents the player's game piece and stores a reference to its player.
  * @author Connor Moyer

@@ -1,3 +1,5 @@
+package Model;
+
 //Board Space implementation for special elements
 public class SpecialElement extends BoardElement {
     private Player owner;
@@ -14,7 +16,7 @@ public class SpecialElement extends BoardElement {
     }
     /**
      * Method gets the current owner
-     * @return Player type owner
+     * @return Model.Player type owner
      * @author Aidan Casey
      */
     public Player getOwner() {
@@ -23,7 +25,7 @@ public class SpecialElement extends BoardElement {
 
     /**
      * Method sets the player as the owner
-     * @param player Player on the space
+     * @param player Model.Player on the space
      * @author Aidan Casey
      */
     public void setOwner(Player player) {
@@ -32,8 +34,8 @@ public class SpecialElement extends BoardElement {
 
     /**
      * To be implemented for action upon player
-     * @param player Player associated with the action
-     * @param banker Banker object to be used in the action
+     * @param player Model.Player associated with the action
+     * @param banker Model.Banker object to be used in the action
      * @author Aidan Casey
      */
     @Override

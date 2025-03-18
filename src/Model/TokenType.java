@@ -1,3 +1,5 @@
+package Model;
+
 /**
  * Enum to differentiate types of tokens that can be used in the game.
  * @author Connor Moyer

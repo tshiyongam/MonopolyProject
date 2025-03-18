@@ -1,4 +1,4 @@
-// Class that manages the Community Chest cards and their information for the Monopoly board
+package Model;// Class that manages the Community Chest cards and their information for the Monopoly board
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ public class CommunityChestCard extends BoardElement implements Card {
     private final Random rand;
 
     /**
-     * Constructor for the CommunityChestCard class.
+     * Constructor for the Model.CommunityChestCard class.
      * @param name String representing the Community Chest
      * @author Mael Tshiyonga
      */
@@ -91,8 +91,8 @@ public class CommunityChestCard extends BoardElement implements Card {
 
     /**
      * Method to process the card drawn.
-     * @param player Player object
-     * @param banker Banker object
+     * @param player Model.Player object
+     * @param banker Model.Banker object
      * @param card String representing the card drawn
      * @author Mael Tshiyonga
      */

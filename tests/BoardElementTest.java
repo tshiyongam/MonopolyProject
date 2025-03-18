@@ -1,19 +1,21 @@
 /**
- * Test class for BoardElement.
+ * Test class for Model.BoardElement.
  * @author Connor Moyer
  */
+import Model.BoardElement;
+import Model.SpaceType;
+import Model.Token;
+import Model.TokenType;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 import java.util.List;
 
-// Subclass of BoardElement for testing purposes
-class TestSpace extends BoardElement {
+
+// Subclass of Model.BoardElement for testing purposes
+class TestSpace {
     public TestSpace(String name, SpaceType type) {
         super(name, type);
-    }
-    @Override
-    public void triggerAction(Player player) {
     }
 }
 

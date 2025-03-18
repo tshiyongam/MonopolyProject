@@ -1,11 +1,11 @@
-// Implementation of the GameBoard class that represents the game board of Monopoly.
+package Model;// Implementation of the Model.GameBoard class that represents the game board of Monopoly.
 import java.util.ArrayList;
 public class GameBoard {
 
     private final ArrayList<BoardElement> boardElements;
 
     /**
-     * Implementation of the GameBoard class.
+     * Implementation of the Model.GameBoard class.
      * Initializes a new game board, an array of board elements.
      * Author: Aidan Casey
      */

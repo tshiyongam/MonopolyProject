@@ -1,3 +1,5 @@
+package Model;
+
 //Board Space implementation for utilities
 public class Utilities extends BoardElement {
     private final int price;
@@ -17,7 +19,7 @@ public class Utilities extends BoardElement {
 
     /**
      * Method to get owner of the utility
-     * @return Player owner of utility
+     * @return Model.Player owner of utility
      * @author Aidan Casey
      */
 
@@ -37,7 +39,7 @@ public class Utilities extends BoardElement {
 
     /**
      * Method to set the owner of a utility.
-     * @param player Player owner of the utility.
+     * @param player Model.Player owner of the utility.
      * @author Aidan Casey
      */
     public void setOwner(Player player) {
@@ -46,8 +48,8 @@ public class Utilities extends BoardElement {
 
     /**
      * Method to be implemented which triggers action upon a player
-     * @param player Player being acted upon
-     * @param banker Banker object to be used in the action
+     * @param player Model.Player being acted upon
+     * @param banker Model.Banker object to be used in the action
      * @author Aidan Casey
      */
     @Override

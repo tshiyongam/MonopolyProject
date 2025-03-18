@@ -1,3 +1,5 @@
+package Model;
+
 // Class that manages the Title Deeds of the properties on the Monopoly board
 public class PropertyElement extends BoardElement {
     private final int price;
@@ -38,7 +40,7 @@ public class PropertyElement extends BoardElement {
 
     /**
      * Method to get the owner of the property
-     * @return Player representing the owner of the property
+     * @return Model.Player representing the owner of the property
      * @author Mael Tshiyonga
      */
     public Player getOwner() {
@@ -47,7 +49,7 @@ public class PropertyElement extends BoardElement {
 
     /**
      * Method to set the owner of the property
-     * @param player Player representing the new owner of the property
+     * @param player Model.Player representing the new owner of the property
      * @author Mael Tshiyonga
      */
     public void setOwner(Player player) {
@@ -56,8 +58,8 @@ public class PropertyElement extends BoardElement {
 
     /**
      * Method to allow the user to interact with the property
-     * @param player Player representing the new owner of the property
-     * @param banker Banker object to be used in the action
+     * @param player Model.Player representing the new owner of the property
+     * @param banker Model.Banker object to be used in the action
      * @author Mael Tshiyonga
      */
     @Override

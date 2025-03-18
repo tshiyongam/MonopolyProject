@@ -1,3 +1,5 @@
+package Model;
+
 //Board Space implementation for tax elements
 public class TaxElement extends BoardElement{
     private final int price;
@@ -36,7 +38,7 @@ public class TaxElement extends BoardElement{
 
     /**
      * Method to set the current player
-     * @param player Player being set
+     * @param player Model.Player being set
      * @author Aidan Casey
      */
     public void setOwner(Player player){

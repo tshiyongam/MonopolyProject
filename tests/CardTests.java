@@ -1,9 +1,12 @@
+import Model.Card;
+import Model.ChanceCard;
+import Model.CommunityChestCard;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.Random;
 import static org.junit.jupiter.api.Assertions.*;
 
-// Tests for the Card class
+// Tests for the Model.Card class
 public class CardTests {
 
     /**
@@ -16,18 +19,18 @@ public class CardTests {
     }
 
     /**
-     * Test method for testing the drawChanceCard method in the ChanceCard class.
+     * Test method for testing the drawChanceCard method in the Model.ChanceCard class.
      * @author Mael Tshiyonga
      */
     @Test
     public void testDrawChanceCard() {
-        Card card = new ChanceCard("ChanceCard");
+        Card card = new ChanceCard("Model.ChanceCard");
         String drawnCard = card.drawCard();
         assertNotNull(drawnCard);
     }
 
     /**
-     * Test method for testing the drawCommunityChestCard method in the CommunityChestCard class.
+     * Test method for testing the drawCommunityChestCard method in the Model.CommunityChestCard class.
      * @author Mael Tshiyonga
      */
     @Test
@@ -38,12 +41,12 @@ public class CardTests {
     }
 
     /**
-     * Test method for testing the shuffledCard method in the ChanceCard class.
+     * Test method for testing the shuffledCard method in the Model.ChanceCard class.
      * @author Mael Tshiyonga
      */
     @Test
     public void testShuffledCardChanceCard() {
-        Card card = new ChanceCard("ChanceCard");
+        Card card = new ChanceCard("Model.ChanceCard");
         ArrayList<String> fruits = new ArrayList<>();
         fruits.add("Apple");
         fruits.add("Banana");
@@ -54,7 +57,7 @@ public class CardTests {
     }
 
     /**
-     * Test method for testing the shuffledCard method in the CommunityChestCard class.
+     * Test method for testing the shuffledCard method in the Model.CommunityChestCard class.
      * @author Mael Tshiyonga
      */
     @Test
@@ -70,18 +73,18 @@ public class CardTests {
     }
 
     /**
-     * Test method for testing the resetDeck method in the ChanceCard class.
+     * Test method for testing the resetDeck method in the Model.ChanceCard class.
      * @author Mael Tshiyonga
      */
     @Test
     public void testResetDeckChanceCard() {
-        Card card = new ChanceCard("ChanceCard");
+        Card card = new ChanceCard("Model.ChanceCard");
         card.resetDeck();
         assertNotNull(card);
     }
 
     /**
-     * Test method for testing the resetDeck method in the CommunityChestCard class.
+     * Test method for testing the resetDeck method in the Model.CommunityChestCard class.
      * @author Mael Tshiyonga
      */
     @Test

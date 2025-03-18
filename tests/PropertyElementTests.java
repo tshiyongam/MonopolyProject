@@ -1,6 +1,10 @@
+import Model.Banker;
+import Model.Player;
+import Model.PropertyElement;
+import Model.TokenType;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-// Tests for the PropertyElement class
+// Tests for the Model.PropertyElement class
 public class PropertyElementTests {
 
     /**
@@ -13,7 +17,7 @@ public class PropertyElementTests {
     }
 
     /**
-     * Test method for testing the constructor of the PropertyElement class.
+     * Test method for testing the constructor of the Model.PropertyElement class.
      * @author Mael Tshiyonga
      */
     @Test
@@ -23,7 +27,7 @@ public class PropertyElementTests {
     }
 
     /**
-     * Test method for testing the getPrice method in the PropertyElement class.
+     * Test method for testing the getPrice method in the Model.PropertyElement class.
      * @author Mael Tshiyonga
      */
     @Test
@@ -33,7 +37,7 @@ public class PropertyElementTests {
     }
 
     /**
-     * Test method for testing the getRent method in the PropertyElement class.
+     * Test method for testing the getRent method in the Model.PropertyElement class.
      * @author Mael Tshiyonga
      */
     @Test
@@ -43,7 +47,7 @@ public class PropertyElementTests {
     }
 
     /**
-     * Test method for testing the getOwner method in the PropertyElement class.
+     * Test method for testing the getOwner method in the Model.PropertyElement class.
      * @author Mael Tshiyonga
      */
     @Test
@@ -53,7 +57,7 @@ public class PropertyElementTests {
     }
 
     /**
-     * Test method for testing the setOwner method in the PropertyElement class.
+     * Test method for testing the setOwner method in the Model.PropertyElement class.
      * @author Mael Tshiyonga
      */
     @Test
@@ -65,7 +69,7 @@ public class PropertyElementTests {
     }
 
     /**
-     * Test method for testing the triggerAction method in the PropertyElement class.
+     * Test method for testing the triggerAction method in the Model.PropertyElement class.
      * @author Mael Tshiyonga
      */
     @Test

@@ -1,6 +1,9 @@
+import Model.Player;
+import Model.Token;
+import Model.TokenType;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-// Tests for the Token class
+// Tests for the Model.Token class
 public class TokenTests {
     /**
      * Test method for testing compiler.
@@ -12,7 +15,7 @@ public class TokenTests {
     }
 
     /**
-     * Test method for testing the constructor of the Token class.
+     * Test method for testing the constructor of the Model.Token class.
      * @author Mael Tshiyonga
      */
     @Test
@@ -25,7 +28,7 @@ public class TokenTests {
     }
 
     /**
-     * Test method for testing the setPlayer method in the Token class.
+     * Test method for testing the setPlayer method in the Model.Token class.
      * @author Mael Tshiyonga
      */
     @Test
@@ -47,7 +50,7 @@ public class TokenTests {
     }
 
     /**
-     * Test method for testing the getPlayer method in the Token class.
+     * Test method for testing the getPlayer method in the Model.Token class.
      * @author Mael Tshiyonga
      */
     @Test
@@ -59,7 +62,7 @@ public class TokenTests {
     }
 
     /**
-     * Test method for testing the getType method in the Token class.
+     * Test method for testing the getType method in the Model.Token class.
      * @author Mael Tshiyonga
      */
     @Test

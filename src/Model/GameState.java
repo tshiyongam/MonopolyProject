@@ -1,4 +1,4 @@
-// Class that manages the current state of the game
+package Model;// Class that manages the current state of the game
 import java.util.List;
 /**
  * Constructor for a Game State Element
