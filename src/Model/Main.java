@@ -29,7 +29,7 @@ public class Main {
             System.out.println(outcome);
 
         // Test space to show Model.BoardElement functionality
-        PropertyElement space = new PropertyElement("Boardwalk",400,50);
+        PropertyElement space = new PropertyElement("Boardwalk", "Blue", 400, new int[]{50, 200, 600, 1400, 1700, 2000}, 200, 200, 200);
         space.triggerAction(new Player("Connor", TokenType.BATTLESHIP), new Banker());
 
         Token token1 = new Token(TokenType.BOOT);
