@@ -1,4 +1,5 @@
-package Model;// Implementation of the Model.GameBoard class that represents the game board of Monopoly.
+package Model;
+// Implementation of the Model.GameBoard class that represents the game board of Monopoly. Y
 import java.util.ArrayList;
 public class GameBoard {
 
