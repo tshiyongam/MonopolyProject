@@ -10,12 +10,11 @@ public class CommunityChestCard extends BoardElement implements Card {
     private final Random rand;
 
     /**
-     * Constructor for the Model.CommunityChestCard class.
-     * @param name String representing the Community Chest
+     * Constructor for the CommunityChestCard class.
      * @author Mael Tshiyonga
      */
-    public CommunityChestCard(String name) {
-        super(name, SpaceType.COMMUNITY_CHEST);
+    public CommunityChestCard() {
+        super("Community Chest", SpaceType.COMMUNITY_CHEST);
         communityChestCards = new ArrayList<>();
         rand = new Random();
         loadCards();
@@ -85,7 +84,6 @@ public class CommunityChestCard extends BoardElement implements Card {
     public void triggerAction(Player player, Banker banker) {
         System.out.println(player.getName() + " has landed on a Community Chest Space!");
         System.out.println(drawCard());
-
         processCard(player, banker, drawCard());
     }
 

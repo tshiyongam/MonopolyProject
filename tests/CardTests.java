@@ -24,7 +24,7 @@ public class CardTests {
      */
     @Test
     public void testDrawChanceCard() {
-        Card card = new ChanceCard("Model.ChanceCard");
+        Card card = new ChanceCard();
         String drawnCard = card.drawCard();
         assertNotNull(drawnCard);
     }
@@ -35,7 +35,7 @@ public class CardTests {
      */
     @Test
     public void testDrawCommunityChestCard() {
-        Card card = new CommunityChestCard("Community Chest");
+        Card card = new CommunityChestCard();
         String drawnCard = card.drawCard();
         assertNotNull(drawnCard);
     }
@@ -46,7 +46,7 @@ public class CardTests {
      */
     @Test
     public void testShuffledCardChanceCard() {
-        Card card = new ChanceCard("Model.ChanceCard");
+        Card card = new ChanceCard();
         ArrayList<String> fruits = new ArrayList<>();
         fruits.add("Apple");
         fruits.add("Banana");
@@ -62,7 +62,7 @@ public class CardTests {
      */
     @Test
     public void testShuffledCardCommunityChestCard() {
-        Card card = new CommunityChestCard("Community Chest");
+        Card card = new CommunityChestCard();
         ArrayList<String> fruits = new ArrayList<>();
         fruits.add("Apple");
         fruits.add("Banana");
@@ -78,7 +78,7 @@ public class CardTests {
      */
     @Test
     public void testResetDeckChanceCard() {
-        Card card = new ChanceCard("Model.ChanceCard");
+        Card card = new ChanceCard();
         card.resetDeck();
         assertNotNull(card);
     }
@@ -89,7 +89,7 @@ public class CardTests {
      */
     @Test
     public void testResetDeckCommunityChestCard() {
-        Card card = new CommunityChestCard("Community Chest");
+        Card card = new CommunityChestCard();
         card.resetDeck();
         assertNotNull(card);
     }

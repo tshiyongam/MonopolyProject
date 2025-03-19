@@ -9,7 +9,7 @@ public abstract class BoardElement {
     private final List<Token> tokens;
 
     /**
-     * Creates a Model.BoardElement with a given name and space type.
+     * Creates a BoardElement with a given name and space type.
      * @param name The name of the space on the game board.
      * @param type The type of space (GO, Model.PropertyElement, Jail, etc.).
      * @author Connor Moyer
