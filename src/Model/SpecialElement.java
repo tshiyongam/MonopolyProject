@@ -9,8 +9,8 @@ public class SpecialElement extends BoardElement {
      * @param name String name of the element
      * @author Aidan Casey
      */
-    public SpecialElement(String name) {
-        super(name, SpaceType.INCOME_TAX);
+    public SpecialElement(String name, SpaceType type) {
+        super(name, type);
         this.owner = null;
 
     }
@@ -33,14 +33,32 @@ public class SpecialElement extends BoardElement {
     }
 
     /**
-     * To be implemented for action upon player
+     * Handles actions for the special spaces
      * @param player Model.Player associated with the action
      * @param banker Model.Banker object to be used in the action
-     * @author Aidan Casey
+     * @author Connor Moyer
      */
     @Override
     public void triggerAction(Player player, Banker banker) {
-
+        switch (getType()) {
+            case GO:
+                player.receiveMoney(200);
+                System.out.println(player.getName() + " collected $200 for passing GO.");
+                break;
+            case JAIL:
+                System.out.println(player.getName() + " is just visiting Jail.");
+                break;
+            case GOTO_JAIL:
+                player.goToJail();
+                System.out.println(player.getName() + " is sent to Jail!");
+                break;
+            case FREE_PARKING:
+                System.out.println(player.getName() + " landed on Free Parking.");
+                break;
+            default:
+                System.out.println("Error: Unexpected space type for SpecialElement.");
+                break;
+        }
     }
 }
 

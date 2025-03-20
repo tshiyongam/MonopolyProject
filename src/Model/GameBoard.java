@@ -21,7 +21,7 @@ public class GameBoard {
      * @author Aidan Casey
      */
     private void initializeBoard() {
-        boardElements.add(new SpecialElement("GO"));
+        boardElements.add(new SpecialElement("GO", SpaceType.GO));
         boardElements.add(new PropertyElement("Mediterranean Avenue", "Purple", 60, new int[]{2, 10, 30, 90, 160, 250}, 30, 50, 50));
         boardElements.add(new CommunityChestCard());
         boardElements.add(new PropertyElement("Baltic Avenue", "Purple", 60, new int[]{4, 20, 60, 180, 320, 450}, 30, 50, 50));
@@ -31,7 +31,7 @@ public class GameBoard {
         boardElements.add(new ChanceCard());
         boardElements.add(new PropertyElement("Vermont Avenue", "Light Blue", 100, new int[]{6, 30, 90, 270, 400, 550}, 50, 50, 50));
         boardElements.add(new PropertyElement("Connecticut Avenue", "Light Blue", 120, new int[]{8, 40, 100, 300, 450, 600}, 60, 50, 50));
-        boardElements.add(new SpecialElement("Jail"));
+        boardElements.add(new SpecialElement("Jail", SpaceType.JAIL));
         boardElements.add(new PropertyElement("St. Charles Place", "Pink", 140, new int[]{10, 50, 150, 450, 625, 750}, 70, 100, 100));
         boardElements.add(new Utilities("Electric Company", 150));
         boardElements.add(new PropertyElement("States Avenue", "Pink", 140, new int[]{10, 50, 150, 450, 625, 750}, 70, 100, 100));
@@ -41,7 +41,7 @@ public class GameBoard {
         boardElements.add(new CommunityChestCard());
         boardElements.add(new PropertyElement("Tennessee Avenue", "Orange", 180, new int[]{14, 70, 200, 550, 750, 950}, 90, 100, 100));
         boardElements.add(new PropertyElement("New York Avenue", "Orange", 200, new int[]{16, 80, 220, 600, 800, 1000}, 100, 100, 100));
-        boardElements.add(new SpecialElement("Free Parking"));
+        boardElements.add(new SpecialElement("Free Parking", SpaceType.FREE_PARKING));
         boardElements.add(new PropertyElement("Kentucky Avenue", "Red", 220, new int[]{18, 90, 250, 700, 875, 1050}, 110, 150, 150));
         boardElements.add(new ChanceCard());
         boardElements.add(new PropertyElement("Indiana Avenue", "Red", 220, new int[]{18, 90, 250, 700, 875, 1050}, 110, 150, 150));
@@ -51,7 +51,7 @@ public class GameBoard {
         boardElements.add(new PropertyElement("Ventnor Avenue", "Yellow", 260, new int[]{22, 110, 330, 800, 975, 1150}, 130, 150, 150));
         boardElements.add(new Utilities("Water Works", 150));
         boardElements.add(new PropertyElement("Marvin Gardens", "Yellow", 280, new int[]{24, 120, 360, 850, 1025, 1200}, 140, 150, 150));
-        boardElements.add(new SpecialElement("Go to Jail"));
+        boardElements.add(new SpecialElement("Go to Jail", SpaceType.GOTO_JAIL));
         boardElements.add(new PropertyElement("Pacific Avenue", "Green", 300, new int[]{26, 130, 390, 900, 1100, 1275}, 150, 200, 200));
         boardElements.add(new PropertyElement("North Carolina Avenue", "Green", 300, new int[]{26, 130, 390, 900, 1100, 1275}, 150, 200, 200));
         boardElements.add(new CommunityChestCard());
