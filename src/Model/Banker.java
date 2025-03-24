@@ -17,7 +17,7 @@ public class Banker {
      * Constructor for a Model.Banker Element
      * @author Mael Tshiyonga
      */
-    Banker() {
+    public Banker() {
         this.titleDeeds = new HashMap<>();
         houseCount = 32;
         hotelCount = 32;

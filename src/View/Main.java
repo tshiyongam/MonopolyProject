@@ -1,4 +1,6 @@
-package Model;
+package View;
+
+import Model.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -12,7 +14,7 @@ public class Main {
         playerOne.takeTurn(gameBoardOne);
         playerTwo.takeTurn(gameBoardOne);
 
-        ChanceCard chanceCard = new ChanceCard("Chance");
+        ChanceCard chanceCard = new ChanceCard();
         Set<String> outcomes = new HashSet<>();
         for (int i = 0; i < 16; i++)
             outcomes.add(chanceCard.drawCard());
@@ -21,7 +23,7 @@ public class Main {
             System.out.println(outcome);
         System.out.println("All Community Chest Model.Card Outcomes Printed.");
 
-        CommunityChestCard communityChestCard = new CommunityChestCard("CommunityChest");
+        CommunityChestCard communityChestCard = new CommunityChestCard();
         Set<String> outcomes2 = new HashSet<>();
         for (int i = 0; i < 16; i++)
             outcomes2.add(communityChestCard.drawCard());
